@@ -13,7 +13,7 @@ var database = firebase.database()
 //Testing the Adzuna API
 
 $(document).off("click", "#submit-button").on("click", "#submit-button", function (event) {
-
+  $("#job-results").empty()
 
   //==================GETS JOB TITLE FROM THE USER-SUBMITTED FORM==========================
   if ($("#exampleFormControlInput1").val()) {
