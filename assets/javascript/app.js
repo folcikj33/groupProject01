@@ -1,6 +1,7 @@
 $(document).ready(function () {
     console.log(document);
 
+
     let searchCity = "chicago";
     let queryURL = "https://api.teleport.org/api/urban_areas/slug%3A" + searchCity + "/scores/"
 
