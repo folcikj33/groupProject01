@@ -1,3 +1,14 @@
+//firebase database
+var config = {
+  apiKey: "AIzaSyCAPKQyou0kz6UP-4U1PtI5k9nCGbiZcOk",
+  authDomain: "groupproject01-91c86.firebaseapp.com",
+  databaseURL: "https://groupproject01-91c86.firebaseio.com",
+  projectId: "groupproject01-91c86",
+  storageBucket: "groupproject01-91c86.appspot.com",
+  messagingSenderId: "187396679104"
+};
+firebase.initializeApp(config);
+var database = firebase.database()
 //Testing the Adzuna API
 
 //what's up with the %20? => it's UTF encoding for URLs to represent a empty space
@@ -38,7 +49,7 @@ var queryURL =
 $.ajax({
   url: queryURL,
   method: "GET"
-}).then(function(response) {
+}).then(function (response) {
   console.log(response);
   console.log(queryURL);
 
