@@ -103,7 +103,7 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
 
       companyDiv.append("<hr />");
 
-      $("#jobs-here").append(companyDiv);
+      $("#job-results").append(companyDiv);
     }
   })
 });
