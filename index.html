@@ -53,6 +53,44 @@
                     <option>Washington, D.C.</option>
                 </select>
             </div>
+
+            <div class="row">
+                <!-- Still need to link the buttons to javascript -->
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Click here to REMOVE full-time positions
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                        <label class="form-check-label" for="defaultCheck2">
+                            Click here to REMOVE permanent positions
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                        <label class="form-check-label" for="defaultCheck2">
+                            Click here to REMOVE positions without listed salary
+                        </label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Click here to REMOVE part-time positions
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                        <label class="form-check-label" for="defaultCheck2">
+                            Click here to REMOVE contract positions
+                        </label>
+                    </div>
+                </div>
+            </div>
             <button type="submit" id="submit-button" class="btn btn-primary">Submit</button>
         </form>
         <br>
@@ -60,7 +98,7 @@
             <div class="col-6">
                 <div class="card">
                     <div class="card-header">
-                        Job Results
+                        Job Details
                     </div>
                     <div class="card-body" id="job-results">
                     </div>
@@ -71,15 +109,17 @@
                     <div class="card-header">
                         City Details
                     </div>
+
                     <div id="city-details" class="card-body">
 
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
+    <br>
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./jobApp/jobAPI.js"></script>

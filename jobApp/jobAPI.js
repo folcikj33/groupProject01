@@ -103,26 +103,7 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
 
       companyDiv.append("<hr />");
 
-      $("#jobs-here").append(companyDiv);
+      $("#job-results").append(companyDiv);
     }
   })
 });
-
-// function jobSearch(jobTitle) {
-//   $(document).off("click", "#submit-button").on("click", "#submit-button", function (event) {
-//     event.preventDefault()
-//     if ($("#exampleFormControlInput1").val()) {
-//       var jobTitle = $("#exampleFormControlInput1").val()
-//       console.log("JOB SEARCH!!", jobTitle)
-//     } else {
-//       var jobTitle = $("#exampleFormControlInput1").attr("placeholder")
-//       console.log("PLACEHOLDER", jobTitle)
-//     }
-//     return jobTitle
-//   })
-// }
-
-
-
-
-
