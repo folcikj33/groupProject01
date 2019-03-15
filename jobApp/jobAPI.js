@@ -91,9 +91,9 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
 
 
   //includes positions without listed salary
-  var salary = 1;
+  const salary = 1;
 
-  var queryURL =
+  const queryURL =
     "https://api.adzuna.com:443/v1/api/jobs/us/search/1?app_id=e6cd0ed5&app_key=0f19421e3255011b31ce0bf4464db591%09&results_per_page=10&what_phrase=" +
     keywordEncoded +
     "&where=" +
@@ -102,7 +102,7 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
     distance +
     "&max_days_old=" +
     age +
-    "&salary_include_unknown=" +
+    "&sort_direction=down&sort_by=date&salary_include_unknown=" +
     salary +
     "&full_time=" +
     fullTime +
