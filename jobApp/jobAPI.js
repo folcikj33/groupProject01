@@ -36,15 +36,6 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
   var locationEncoded = encodeURI(where);
   //==================GETS CITY FROM DROPDOWN==============================================
 
-<<<<<<< HEAD
-
-  //if 1, only lists permanent positions (fullTime can be added to show both)
-  var permanent = 0;
-  //if 1, only lists full-time positions
-  var fullTime = 1;
-  //includes positions without listed salary
-  var salary = 1;
-=======
 
   //==================GETS EMPLOYMENT TYPE FROM DROPDOWN===================================
   var jobType = $("#job-selected option:selected").text();
@@ -62,7 +53,6 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
   }
   //==================GETS EMPLOYMENT TYPE FROM DROPDOWN===================================
 
->>>>>>> master
 
   //==================GETS DISTANCE FROM USER-SUBMITTED FORM================================
   //distance in km
