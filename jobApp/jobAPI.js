@@ -9,11 +9,10 @@ var config = {
 };
 firebase.initializeApp(config);
 var database = firebase.database()
-
 //Testing the Adzuna API
 
 $(document).off("click", "#submit-button").on("click", "#submit-button", function (event) {
-  $("#job-results").empty()
+  $("#job-results").empty();
 
   //==================GETS JOB TITLE FROM THE USER-SUBMITTED FORM==========================
   if ($("#exampleFormControlInput1").val()) {
@@ -31,33 +30,17 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
 
 
   //==================GETS CITY FROM DROPDOWN==============================================
-  //city variable doesn't seem to be working 
-  var city = $("#city-selected option:selected").text();
-  //var city = $("#exampleFormControlSelect1: selected") .text ();
+  var city = $("#exampleFormControlSelect1 option:selected").text();
   console.log("CITY!!", city)
   var where = city;
   var locationEncoded = encodeURI(where);
   //==================GETS CITY FROM DROPDOWN==============================================
 
-  //==================GETS EMPLOYMENT TYPE FROM DROPDOWN===================================
-  var jobType = $("#job-selected option:selected").text();
-  //var city = $("#exampleFormControlSelect1: selected") .text ();
-  console.log("JOB!!", jobType)
-  //var type = jobType;
-  if (jobType == "Full-Time") {
-    var jobAPI = "&full_time=1"
-  } else if (jobType == "Part-Time") {
-    var jobAPI = "&part_time=1"
-  } else if (jobType == "Contract") {
-    var jobAPI = "&contract=1"
-  } else if (jobType == "permanent") {
-    var jobAPI = "&permanent=1"
-  }
 
   //if 1, only lists permanent positions (fullTime can be added to show both)
-  //var permanent = 0;
+  var permanent = 0;
   //if 1, only lists full-time positions
-  //var fullTime = 1;
+  var fullTime = 1;
   //includes positions without listed salary
   var salary = 1;
 
@@ -77,7 +60,10 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
     daysOld +
     "&salary_include_unknown=" +
     salary +
-    jobAPI
+    "&full_time=" +
+    fullTime +
+    "&permanent=" +
+    permanent;
 
   $.ajax({
     url: queryURL,
