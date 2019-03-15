@@ -20,9 +20,9 @@
 	</head>
 
 	<body>
-		<div class="container" class="all">
+		<div class="container">
 			<header>
-				<div class="jumbotron jumbotron-fluid" class="heady">
+				<div class="jumbotron jumbotron-fluid">
 					<h1 class="display-4 text-center">Nomad</h1>
 				</div>
 			</header>
@@ -36,103 +36,83 @@
 						placeholder="Software Engineer"
 					/>
 				</div>
-				<div class="form-group">
-					<label for="exampleFormControlSelect1">Cities</label>
-					<select class="form-control" id="city-selected">
-						<option>Austin</option>
-						<option>Boston</option>
-						<option>Charleston</option>
-						<option>Chicago</option>
-						<option>Cincinnati</option>
-						<option>Cleveland</option>
-						<option>Dallas</option>
-						<option>Denver</option>
-						<option>Houston</option>
-						<option>Honolulu</option>
-						<option>Las Vegas</option>
-						<option>Los Angeles</option>
-						<option>Miami</option>
-						<option>Milwaukee</option>
-						<option>Minneapolis-Saint Paul</option>
-						<option>Nashville</option>
-						<option>New York</option>
-						<option>Orlando</option>
-						<option>Palo Alto</option>
-						<option>Philadelphia</option>
-						<option>Phoenix</option>
-						<option>Portland, OR</option>
-						<option>San Diego</option>
-						<option>San Francisco Bay Area</option>
-						<option>San Jose</option>
-						<option>Seattle</option>
-						<option>St. Louis</option>
-						<option>Washington, D.C.</option>
-					</select>
+				<div class="row">
+					<div class="form-group col-sm-12 col-md-6">
+						<label for="exampleFormControlSelect1">Cities</label>
+						<select class="form-control" id="city-selected">
+							<option>Austin</option>
+							<option>Boston</option>
+							<option>Charleston</option>
+							<option>Chicago</option>
+							<option>Cincinnati</option>
+							<option>Cleveland</option>
+							<option>Dallas</option>
+							<option>Denver</option>
+							<option>Houston</option>
+							<option>Honolulu</option>
+							<option>Las Vegas</option>
+							<option>Los Angeles</option>
+							<option>Miami</option>
+							<option>Milwaukee</option>
+							<option>Minneapolis-Saint Paul</option>
+							<option>Nashville</option>
+							<option>New York</option>
+							<option>Orlando</option>
+							<option>Palo Alto</option>
+							<option>Philadelphia</option>
+							<option>Phoenix</option>
+							<option>Portland, OR</option>
+							<option>San Diego</option>
+							<option>San Francisco Bay Area</option>
+							<option>San Jose</option>
+							<option>Seattle</option>
+							<option>St. Louis</option>
+							<option>Washington, D.C.</option>
+						</select>
+					</div>
+
+					<div class="form-group col-sm-12 col-md-6">
+						<label for="exampleFormControlSelect1"
+							>Type of Position</label
+						>
+						<select class="form-control" id="job-selected">
+							<option>Full-Time</option>
+							<option>Part-Time</option>
+							<option>Contract</option>
+							<option>Permanent</option>
+						</select>
+					</div>
 				</div>
 
 				<div class="row">
-					<!-- Still need to link the buttons to javascript -->
 					<div class="col-sm-12 col-md-6">
-						<div class="form-check">
+						<div class="form-group">
+							<label for="exampleFormControlInput1"
+								>Distance From City (km)</label
+							>
 							<input
-								class="form-check-input"
-								type="checkbox"
-								value=""
-								id="defaultCheck1"
+								type="job-title"
+								class="form-control"
+								id="exampleFormControlInput2"
+								placeholder="20"
 							/>
-							<label class="form-check-label" for="defaultCheck1">
-								Click here to REMOVE full-time positions
-							</label>
-						</div>
-						<div class="form-check">
-							<input
-								class="form-check-input"
-								type="checkbox"
-								value=""
-								id="defaultCheck2"
-							/>
-							<label class="form-check-label" for="defaultCheck2">
-								Click here to REMOVE permanent positions
-							</label>
-						</div>
-						<div class="form-check">
-							<input
-								class="form-check-input"
-								type="checkbox"
-								value=""
-								id="defaultCheck2"
-							/>
-							<label class="form-check-label" for="defaultCheck2">
-								Click here to REMOVE positions without listed
-								salary
-							</label>
 						</div>
 					</div>
 					<div class="col-sm-12 col-md-6">
-						<div class="form-check">
+						<div class="form-group">
+							<label for="exampleFormControlInput1"
+								>Age of Posting (days)</label
+							>
 							<input
-								class="form-check-input"
-								type="checkbox"
-								value=""
-								id="defaultCheck1"
+								type="job-title"
+								class="form-control"
+								id="exampleFormControlInput3"
+								placeholder="10"
 							/>
-							<label class="form-check-label" for="defaultCheck1">
-								Click here to REMOVE part-time positions
-							</label>
-						</div>
-						<div class="form-check">
-							<input
-								class="form-check-input"
-								type="checkbox"
-								value=""
-								id="defaultCheck2"
-							/>
-							<label class="form-check-label" for="defaultCheck2">
-								Click here to REMOVE contract positions
-							</label>
 						</div>
 					</div>
 				</div>
+
 				<button
 					type="submit"
 					id="submit-button"
