@@ -1,9 +1,8 @@
 /* Small devices (landscape phones, 576px and up) */
 
-header {
-	height: 300px;
-}
-h1 {
+h1,
+h2 {
+	/* justify: center; */
 	font-family: "Alegreya Sans SC";
 	color: navy;
 	font-weight: 900;
@@ -11,9 +10,43 @@ h1 {
 	letter-spacing: 50px;
 	vertical-align: center;
 }
-.jumbotron {
-	height: 300px;
-	background-color: lightblue;
+
+header {
+	justify: center;
+	height: 500px;
+	/* background-position: center; */
+	opacity: 0.5;
+	background-image: url("../images/nomadhero.jpg");
+	position: relative;
+}
+
+.jumbotron1 {
+	justify-content: center;
+	position: absolute;
+	height: 500px;
+	width: 100%;
+	/* opacity: 0.1; */
+	background-color: transparent;
 	border-radius: 25px;
 	vertical-align: center;
+	/* z-index: -1; */
+}
+
+.heady {
+	/* position: absolute; */
+	/* z-index: -1; */
+	opacity: 1;
+}
+
+.form-group,
+.card label {
+	line-height: 2;
+	font-size: 1.5em;
+	font-family: "alegreya sans";
+}
+
+button,
+.card-header {
+	font-family: "alegreya sans SC";
+	font-size: 2em;
 }
