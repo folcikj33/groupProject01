@@ -14,9 +14,17 @@
 			crossorigin="anonymous"
 		/>
 		<link
+			href="https://fonts.googleapis.com/css?family=Alegreya Sans"
+			rel="stylesheet"
+		/>
+		<link
 			type="text/css"
 			rel="stylesheet"
 			href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Alegreya Sans SC"
+			rel="stylesheet"
 		/>
 		<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
 	</head>
@@ -24,7 +32,17 @@
 	<body>
 		<!-- The surrounding HTML is left untouched by FirebaseUI.
          Your app may use that space for branding, controls and other customizations.-->
-		<h1>Welcome to My Awesome App</h1>
+		<header>
+			<div class="jumbotron jumbotron-fluid jumbotron1"></div>
+			<div class="heady">
+				<h1 class="display-1 text-center">Welcome to Nomad!</h1>
+				<br />
+				<h2 class="display-10 text-center">
+					Search for Jobs with your Next Destination
+				</h2>
+			</div>
+		</header>
+
 		<div id="firebaseui-auth-container"></div>
 		<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
 
