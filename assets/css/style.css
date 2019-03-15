@@ -1,4 +1,19 @@
-/* css created */
-.display-4{
-    text-align: center
+/* Small devices (landscape phones, 576px and up) */
+
+header {
+	height: 300px;
+}
+h1 {
+	font-family: "Alegreya Sans SC";
+	color: navy;
+	font-weight: 900;
+	font-size: 3em;
+	letter-spacing: 50px;
+	vertical-align: center;
+}
+.jumbotron {
+	height: 300px;
+	background-color: lightblue;
+	border-radius: 25px;
+	vertical-align: center;
 }
