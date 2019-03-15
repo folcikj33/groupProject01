@@ -39,11 +39,25 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
   var locationEncoded = encodeURI(where);
   //==================GETS CITY FROM DROPDOWN==============================================
 
+  //==================GETS EMPLOYMENT TYPE FROM DROPDOWN===================================
+  var jobType = $("#job-selected option:selected").text();
+  //var city = $("#exampleFormControlSelect1: selected") .text ();
+  console.log("JOB!!", jobType)
+  //var type = jobType;
+  if (jobType == "Full-Time") {
+    var jobAPI = "&full_time=1"
+  } else if (jobType == "Part-Time") {
+    var jobAPI = "&part_time=1"
+  } else if (jobType == "Contract") {
+    var jobAPI = "&contract=1"
+  } else if (jobType == "permanent") {
+    var jobAPI = "&permanent=1"
+  }
 
   //if 1, only lists permanent positions (fullTime can be added to show both)
-  var permanent = 0;
+  //var permanent = 0;
   //if 1, only lists full-time positions
-  var fullTime = 1;
+  //var fullTime = 1;
   //includes positions without listed salary
   var salary = 1;
 
@@ -63,10 +77,7 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
     daysOld +
     "&salary_include_unknown=" +
     salary +
-    "&full_time=" +
-    fullTime +
-    "&permanent=" +
-    permanent;
+    jobAPI
 
   $.ajax({
     url: queryURL,
