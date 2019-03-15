@@ -13,11 +13,7 @@ var database = firebase.database()
 //Testing the Adzuna API
 
 $(document).off("click", "#submit-button").on("click", "#submit-button", function (event) {
-<<<<<<< HEAD
   $("#job-results").empty()
-=======
-  $("#job-results").empty();
->>>>>>> master
 
   //==================GETS JOB TITLE FROM THE USER-SUBMITTED FORM==========================
   if ($("#exampleFormControlInput1").val()) {
@@ -35,7 +31,9 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
 
 
   //==================GETS CITY FROM DROPDOWN==============================================
-  var city = $("#exampleFormControlSelect1 option:selected").text();
+  //city variable doesn't seem to be working 
+  var city = $("#city-selected option:selected").text();
+  //var city = $("#exampleFormControlSelect1: selected") .text ();
   console.log("CITY!!", city)
   var where = city;
   var locationEncoded = encodeURI(where);
