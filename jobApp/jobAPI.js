@@ -31,6 +31,8 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
 
   //==================GETS CITY FROM DROPDOWN==============================================
   var city = $("#exampleFormControlSelect1 option:selected").text();
+  var fulltimeInput = $("#job-selected option:selected").text()
+  console.log('this is our fill time input', fulltimeInput);
   console.log("CITY!!", city)
   var where = city;
   var locationEncoded = encodeURI(where);
@@ -94,10 +96,11 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
     age +
     "&salary_include_unknown=" +
     salary +
-    "&full_time=" +
-    fullTime +
+    jobAPI +
+    // "&full_time=" +
+    // 'true' +
     "&permanent=" +
-    permanent;
+    'true';
 
   $.ajax({
     url: queryURL,
@@ -108,6 +111,14 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
 
     var database = response.results;
     console.log(database);
+
+
+
+
+    // database.ref(userId + '/cat').push({
+    //   stuff: 'mystuff'
+    // })
+
 
     //NICK'S IF STATEMENT==========================================
     if (database.length > 0) {
