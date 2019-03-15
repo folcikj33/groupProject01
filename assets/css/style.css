@@ -1,8 +1,6 @@
 /* Small devices (landscape phones, 576px and up) */
 
-header {
-	height: 300px;
-}
+
 h1 {
 	font-family: "Alegreya Sans SC";
 	color: navy;
@@ -12,8 +10,8 @@ h1 {
 	vertical-align: center;
 }
 .jumbotron {
-	height: 300px;
-	background-color: lightblue;
+	height: 200px;
+	background-image: url()
 	border-radius: 25px;
 	vertical-align: center;
 }
