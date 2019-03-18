@@ -93,13 +93,17 @@ h2 {
 }
 
 /* Turn the links purple when clicked */
+a:link {
+    text-decoration: none;
+}
+
 a:visited {
-	color: darkmagenta;
+    color: darkmagenta;
 }
 
 .scrollStyle {
 	max-height: 905px;
-	overflow-y: scroll;
+    overflow-y: scroll;
 }
 
 /* ________FOR SURE FRONT PAGE STUFF. ABOVE NEEDS SESSING OUT________ */

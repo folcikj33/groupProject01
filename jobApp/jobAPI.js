@@ -165,15 +165,11 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
 
       for (i = 0; i < database.length; i++) {
         var companyList = database[i].company.display_name;
-        //===============New Code=================================
         let newTable = $("<table>").attr("class", "table")
         let tHead = $("<thead>")
-        //===============New Code=================================
 
         var companyDiv = $("<div>").attr("class", "company-" + i);
-        //companyDiv.append(companyList + ": ");
 
-        //===============New Code=================================
         let newTR = $("<tr>")
         let newTH = $("<th>").attr("scope", "col")
         newTH.html(companyList);
@@ -183,15 +179,11 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
         newTable.append(tHead);
 
         companyDiv.append(newTable);
-        //===============New Code=================================
 
         var titleList = database[i].title;
         companyDiv.append("<u>" + titleList + "</u>" + ": ");
 
         var description = database[i].description;
-        //console.log("DESCRIPTION: ", description)
-        // var descriptionText = $("<div>").html(description);
-        // descriptionText.attr("style", "border: 2px solid black")
         companyDiv.append("<br />" + description + "<br /> ");
 
         var applyButton = $("<a>")
@@ -199,7 +191,8 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
           .attr("target", "_blank")
           .attr("class", "btn")
           .attr("class", "btn-default")
-          .text("Apply!");
+          .attr("style", "text-align: center")
+          .html("<h4>" + "Apply!" + "</h4>");
         companyDiv.append(applyButton);
 
         $("#job-results").append(companyDiv);
