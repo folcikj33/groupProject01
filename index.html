@@ -67,7 +67,7 @@
 					<div class="frontvid-button get-started text-center justify-center" type="button">Get Started</div>
 				</div>
 				<div>
-					<div class="frontvid-button about-app text-center justify-center" type="button">About Nomad</div>
+					<div class="frontvid-button about-app text-center justify-center" type="button">About Nomad</div> 
 				</div>
 				
 			</div>
@@ -75,7 +75,7 @@
 		</div>
 		 
 
-		<div class="firebase-container d-inline d-none" id="firebaseui-auth-container"></div>
+		<div class="firebase-container d-inline" id="firebaseui-auth-container"></div>
 		<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
 
 		<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
@@ -137,9 +137,9 @@
 
 			// _________JAKE EXPERIMENTING; PROBABLY JUNK IF AFTER 12:00 3/18/19__________ 
 			var getStarted = function getStarted(){
-				$.get-started.on("click", function() {
-					$.firebaseui-idp-list li.toggleClass("reveal");
-					$.firebaseui-card-footer.toggleClass("reveal");
+				$(".get-started").on("click", function() {
+					$(".firebaseui-idp-list > li").toggleClass("reveal");
+					$(".firebaseui-card-footer").toggleClass("reveal");
 				})
 			};
 			getStarted();
