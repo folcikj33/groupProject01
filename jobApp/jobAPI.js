@@ -83,7 +83,7 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
   const salary = 1;
 
   const queryURL =
-    "https://api.adzuna.com:443/v1/api/jobs/us/search/1?app_id=e6cd0ed5&app_key=0f19421e3255011b31ce0bf4464db591%09&results_per_page=10&what_phrase=" +
+    "https://api.adzuna.com:443/v1/api/jobs/us/search/1?app_id=e6cd0ed5&app_key=0f19421e3255011b31ce0bf4464db591%09&results_per_page=300&what_phrase=" +
     keywordEncoded +
     "&where=" +
     locationEncoded +
