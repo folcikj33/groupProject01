@@ -4,32 +4,29 @@
 	margin: none;
 	align-content: center;
 	text-align: center;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 h1,
 h2 {
 	/* justify: center; */
 	font-family: "Alegreya Sans SC";
-	color: rgb(0, 0, 71);
-	text-shadow: 0px 1px 1px white;
+	color: rgb(255, 255, 255);
+	text-shadow: 50px 10px 50px rgb(0, 153, 224);
 	font-weight: 900;
 	font-size: 3em;
-	letter-spacing: 50px;
+	letter-spacing: 15px;
 	z-index: 1;
 }
 
 .greeting {
-	font-size: 8em;
-	padding-top: 30px;
+	font-size: 6em;
 }
-
 .nomad {
 	text-shadow: 5px 5px 50px navy;
 	text-shadow: 30px 5px 5px 50px black;
 	color: white;
-	font-size: 7em;
-	padding-top: 30px;
+	font-size: 6em;
 }
 
 #header2 {
@@ -66,23 +63,24 @@ h2 {
 	/* opacity: 0.1; */
 	/* background-color: transparent; */
 	background-color: rgba(0, 0, 200, 0.109);
-	border-radius: 25px;
 	vertical-align: center;
 	z-index: -1;
 }
 
-.heady,.heady-home {
+.heady,
+.heady-home {
 	display: flex;
 	justify: center;
 	flex-direction: column;
 	align-items: center;
-	height: 100%;
+	width: 100%;
+	/* height: 100%; */
 	/* z-index: 1; */
 }
 
 .form-group,
 .card label {
-	line-height: 2;
+	/* line-height: 1; */
 	font-size: 1.5em;
 	font-family: "alegreya sans";
 }
@@ -109,7 +107,7 @@ a:visited {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	padding-top: 100px;
+	/* padding-top: 100px; */
 	left: 50%;
 }
 
@@ -131,11 +129,11 @@ a:visited {
 }
 
 .get-started {
-	border: 4px solid black;
-	border-radius: 30px;
+	border: 2px solid black;
+	/* border-radius: 30px; */
 	height: 80px;
 	width: 180px;
-	box-shadow: 0px 0px 1px 1px white;
+	/* box-shadow: 0px 0px 1px 1px white; */
 	/* width: 0px; */
 	text-align: center;
 	/* height: 0px; */
@@ -186,7 +184,7 @@ a:visited {
 	}
 }
 
-/* ________TABLET -- NOTICE NOTE DOWN BELOW________ */
+/* ________TABLET________ */
 @media only screen and (max-width: 994px) {
 	.frontvid {
 		/* height: 140%; */
@@ -208,11 +206,6 @@ a:visited {
 	.frontvid {
 		display: none;
 	}
-.firebaseui-idp-list > li.reveal,
-.firebaseui-card-footer.reveal {
-	height: auto;
-	opacity: 1;
-	visibility: visible;
 }
 
 /* ________OVERLAYS________ */
@@ -224,13 +217,9 @@ a:visited {
 	position: absolute;
 }
 
-<<<<<<< HEAD
-#headerOverlay {
-	background-color: rgba(19, 19, 95, 0.246);
-=======
-#headerOverlay, #headerOverlay-home {
+#headerOverlay,
+#headerOverlay-home {
 	background-color: rgba(19, 19, 95, 0.438);
->>>>>>> master
 }
 
 /* possibly change color */
@@ -238,12 +227,22 @@ a:visited {
 	background-color: rgba(19, 19, 95, 0.274);
 }
 
+#firebaseui-auth-container {
+	position: absolute;
+	/* padding: 400px; */
+	margin-top: 450px;
+	/* align: center; */
+	margin-left: 35%;
+	margin-right: 35%;
+}
+
 .firebaseui-idp-list > li,
 .firebaseui-card-footer {
-	visibility: none;
-	opacity: 0;
-	height: 0;
-	-webkit-transition: height auto 4s, opacity 1 3s, visibility visible 0.1s;
+	/* visibility: none; */
+	/* opacity: 0; */
+	top: 30px;
+	-webkit-transition: height auto 4s, opacity 1 3s, visibility visible,
+		padding-top 100px;
 	transition-duration: 3s;
 	transition-timing-function: ease;
 }
@@ -253,6 +252,8 @@ a:visited {
 	height: auto;
 	opacity: 1;
 	visibility: visible;
+	top: 30px;
+	padding-top: 100px;
 }
 
 /* ________Saving this for the Nomad animation whereby it swoops in as "Now" but the w flips as the "a" and "d" are added_________ */
