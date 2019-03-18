@@ -91,6 +91,10 @@ h2 {
 }
 
 /* Turn the links purple when clicked */
+a:link {
+	text-decoration: none;
+}
+
 a:visited {
 	color: darkmagenta;
 }
@@ -98,6 +102,11 @@ a:visited {
 .scrollStyle {
 	max-height: 905px;
 	overflow-y: scroll;
+}
+
+/* squeezing in the form and results */
+.container {
+	width: 80%;
 }
 
 /* ________FOR SURE FRONT PAGE STUFF. ABOVE NEEDS SESSING OUT________ */
@@ -255,3 +264,4 @@ a:visited {
 /* @keyframe revealSignIn {
 
 } */
+/* } */

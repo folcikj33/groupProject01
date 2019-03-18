@@ -9,7 +9,51 @@ var config = {
 };
 firebase.initializeApp(config);
 //REMEMBER TO CHANGE THIS KEYWORD BECAUSE DATABASE IS USED LATER
-var database = firebase.database()
+var database = firebase.database();
+var user;
+firebase.auth().onAuthStateChanged(function () {
+  user = firebase.auth().currentUser;
+  console.log(user);
+  currentUserID = user.uid;
+  console.log(currentUserID);
+  if (user != null) {
+    database
+      .ref("users")
+      .child(user.uid)
+      .set({
+        email: user.email,
+        displayName: user.displayName,
+        newUser: true
+      });
+  }
+});
+// var ref = new Firebase("https://groupproject01-91c86.firebaseio.com");
+// // Generate a new push ID for the new post
+// var newPostRef = ref.child("posts").push();
+// var newPostKey = newPostRef.key();
+// // Create the data we want to update
+// var updatedUserData = {};
+// updatedUserData["user/posts/" + newPostKey] = true;
+// updatedUserData["posts/" + newPostKey] = {
+//   title: "New Post",
+//   content: "Here is my new post!"
+// };
+// Do a deep-path update
+// ref.update(updatedUserData, function (error) {
+//   if (error) {
+//     console.log("Error updating data:", error);
+//   }
+// });
+// database.ref(userId + '/jobAPI').push({
+//   stuff: 
+// })
+// const key = firebase.database().ref().push().key
+// function writeFavoritesList(name, videoID, toggleValue) {
+//   firebase.database().ref('jobAPI/' + userId).set({
+//     name: displayName,
+//     videoID: videoID,
+//     toggleValue: true
+//   });
 
 //Testing the Adzuna API
 
@@ -85,7 +129,8 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
   const queryURL =
     "https://api.adzuna.com:443/v1/api/jobs/us/search/1?app_id=e6cd0ed5&app_key=0f19421e3255011b31ce0bf4464db591%09&results_per_page=300&what_phrase=" +
     keywordEncoded +
-    "&where=" +
+    //Revature excluded because it's annoying
+    "&what_exclude=revature&where=" +
     locationEncoded +
     "&distance=" +
     distance +
@@ -120,15 +165,11 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
 
       for (i = 0; i < database.length; i++) {
         var companyList = database[i].company.display_name;
-        //===============New Code=================================
         let newTable = $("<table>").attr("class", "table")
         let tHead = $("<thead>")
-        //===============New Code=================================
 
         var companyDiv = $("<div>").attr("class", "company-" + i);
-        //companyDiv.append(companyList + ": ");
 
-        //===============New Code=================================
         let newTR = $("<tr>")
         let newTH = $("<th>").attr("scope", "col")
         newTH.html(companyList);
@@ -138,10 +179,9 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
         newTable.append(tHead);
 
         companyDiv.append(newTable);
-        //===============New Code=================================
 
         var titleList = database[i].title;
-        companyDiv.append(titleList + ": ");
+        companyDiv.append("<u>" + titleList + "</u>" + ": ");
 
         var description = database[i].description;
         companyDiv.append("<br />" + description + "<br /> ");
@@ -151,13 +191,29 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
           .attr("target", "_blank")
           .attr("class", "btn")
           .attr("class", "btn-default")
-          .text("Apply!");
+          .attr("style", "text-align: center")
+          .html("<h4>" + "Apply!" + "</h4>");
         companyDiv.append(applyButton);
 
         $("#job-results").append(companyDiv);
+        // console.log(user);
+
       }
     } else {
       $("#job-results").append("0 jobs found on Adzuna.")
     }
   })
-})
+
+  $(document).on("click", "a", function () {
+
+    var link = $(this).attr("href");
+    console.log(link);
+
+    database
+      .ref("users")
+      .child(user.uid)
+      .push({
+        link: link
+      });
+  })
+});

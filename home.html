@@ -1,126 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Home Page</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Alegreya Sans"
+			rel="stylesheet"
+		/>
+		<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+		<link
+			href="https://fonts.googleapis.com/css?family=Alegreya Sans SC"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<title>Home Page</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-	<link href="https://fonts.googleapis.com/css?family=Alegreya Sans" rel="stylesheet" />
-	<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Alegreya Sans SC" rel="stylesheet" />
-	<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-</head>
+	<body class="homePage">
+		<div class="container">
+			<header id="header2">
+				<div class="overlay" id="headerOverlay-home"></div>
+				<!-- <div class="jumbotron jumbotron-fluid jumbotron1"></div> -->
+				<div class="heady-home">
+					<h1 class="display-4 text-center justify-center">Nomad</h1>
+				</div>
+			</header>
+			<form>
+				<div class="form-group">
+					<label for="exampleFormControlInput1">Job Search</label>
+					<input
+						type="job-title"
+						class="form-control"
+						id="exampleFormControlInput1"
+						placeholder="Software Engineer"
+					/>
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-12 col-md-6">
+						<label for="exampleFormControlSelect1">Cities</label>
+						<select class="form-control" id="city-selected">
+							<option>Austin</option>
+							<option>Boston</option>
+							<option>Charleston</option>
+							<option>Chicago</option>
+							<option>Cincinnati</option>
+							<option>Cleveland</option>
+							<option>Dallas</option>
+							<option>Denver</option>
+							<option>Houston</option>
+							<option>Honolulu</option>
+							<option>Las Vegas</option>
+							<option>Los Angeles</option>
+							<option>Miami</option>
+							<option>Milwaukee</option>
+							<option>Minneapolis-Saint Paul</option>
+							<option>Nashville</option>
+							<option>New York</option>
+							<option>Orlando</option>
+							<option>Palo Alto</option>
+							<option>Philadelphia</option>
+							<option>Phoenix</option>
+							<option>Portland, OR</option>
+							<option>San Diego</option>
+							<option>San Francisco Bay Area</option>
+							<option>San Jose</option>
+							<option>Seattle</option>
+							<option>St. Louis</option>
+							<option>Washington, D.C.</option>
+						</select>
+					</div>
 
-<body class="homePage">
-	<div class="container">
-		<header id="header2">
-			<div class="overlay" id="headerOverlay-home"></div>
-			<!-- <div class="jumbotron jumbotron-fluid jumbotron1"></div> -->
-			<div class="heady-home">
-				<h1 class="display-4 text-center justify-center">Nomad</h1>
-			</div>
-		</header>
-		<form>
-			<div class="form-group">
-				<label for="exampleFormControlInput1">Job Search</label>
-				<input type="job-title" class="form-control" id="exampleFormControlInput1"
-					placeholder="Software Engineer" />
-			</div>
+					<div class="form-group col-sm-12 col-md-6">
+						<label for="exampleFormControlSelect1"
+							>Type of Position</label
+						>
+						<select class="form-control" id="job-selected">
+							<option>Full-Time</option>
+							<option>Part-Time</option>
+							<option>Contract</option>
+							<option>Permanent</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-12 col-md-6">
+						<div class="form-group">
+							<label for="exampleFormControlInput1"
+								>Distance From City (km)</label
+							>
+							<input
+								type="job-title"
+								class="form-control"
+								id="exampleFormControlInput2"
+								placeholder="20"
+							/>
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-6">
+						<div class="form-group">
+							<label for="exampleFormControlInput1"
+								>Age of Posting (days)</label
+							>
+							<input
+								type="job-title"
+								class="form-control"
+								id="exampleFormControlInput3"
+								placeholder="10"
+							/>
+						</div>
+					</div>
+				</div>
+
+				<button
+					type="submit"
+					id="submit-button"
+					class="btn btn-primary"
+				>
+					Submit
+				</button>
+			</form>
+			<br />
+
+			<div id="recent-clicks"></div>
+
 			<div class="row">
-				<div class="form-group col-sm-12 col-md-6">
-					<label for="exampleFormControlSelect1">Cities</label>
-					<select class="form-control" id="city-selected">
-						<option>Austin</option>
-						<option>Boston</option>
-						<option>Charleston</option>
-						<option>Chicago</option>
-						<option>Cincinnati</option>
-						<option>Cleveland</option>
-						<option>Dallas</option>
-						<option>Denver</option>
-						<option>Houston</option>
-						<option>Honolulu</option>
-						<option>Las Vegas</option>
-						<option>Los Angeles</option>
-						<option>Miami</option>
-						<option>Milwaukee</option>
-						<option>Minneapolis-Saint Paul</option>
-						<option>Nashville</option>
-						<option>New York</option>
-						<option>Orlando</option>
-						<option>Palo Alto</option>
-						<option>Philadelphia</option>
-						<option>Phoenix</option>
-						<option>Portland, OR</option>
-						<option>San Diego</option>
-						<option>San Francisco Bay Area</option>
-						<option>San Jose</option>
-						<option>Seattle</option>
-						<option>St. Louis</option>
-						<option>Washington, D.C.</option>
-					</select>
-				</div>
-
-				<div class="form-group col-sm-12 col-md-6">
-					<label for="exampleFormControlSelect1">Type of Position</label>
-					<select class="form-control" id="job-selected">
-						<option>Full-Time</option>
-						<option>Part-Time</option>
-						<option>Contract</option>
-						<option>Permanent</option>
-					</select>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-sm-12 col-md-6">
-					<div class="form-group">
-						<label for="exampleFormControlInput1">Distance From City (km)</label>
-						<input type="job-title" class="form-control" id="exampleFormControlInput2" placeholder="20" />
+				<div class="col-sm-12 col-lg-6">
+					<div class="card">
+						<div class="card-header">
+							Job Details
+						</div>
+						<div
+							class="card-body scrollStyle"
+							id="job-results"
+						></div>
 					</div>
 				</div>
-				<div class="col-sm-12 col-md-6">
-					<div class="form-group">
-						<label for="exampleFormControlInput1">Age of Posting (days)</label>
-						<input type="job-title" class="form-control" id="exampleFormControlInput3" placeholder="10" />
+				<div class="col-sm-12 col-lg-6">
+					<div class="card">
+						<div class="card-header">
+							City Details
+						</div>
+						<div
+							id="city-details"
+							class="card-body scrollStyle"
+						></div>
 					</div>
-				</div>
-			</div>
-
-			<button type="submit" id="submit-button" class="btn btn-primary">
-				Submit
-			</button>
-		</form>
-		<br />
-		<div class="row">
-			<div class="col-sm-12 col-lg-6">
-				<div class="card">
-					<div class="card-header">
-						Job Details
-					</div>
-					<div class="card-body scrollStyle" id="job-results"></div>
-				</div>
-			</div>
-			<div class="col-sm-12 col-lg-6">
-				<div class="card">
-					<div class="card-header">
-						City Details
-					</div>
-
-					<div id="city-details" class="card-body"></div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<br />
+		<br />
 
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
-		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="./jobApp/jobAPI.js"></script>
-	<script src="./assets/javascript/app.js"></script>
-</body>
-
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.min.js"
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			crossorigin="anonymous"
+		></script>
+		<script type="text/javascript" src="./jobApp/jobAPI.js"></script>
+		<script src="./assets/javascript/app.js"></script>
+	</body>
 </html>
