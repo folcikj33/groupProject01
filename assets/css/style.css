@@ -16,19 +16,20 @@ h2 {
 	font-weight: 900;
 	font-size: 3em;
 	letter-spacing: 50px;
-	vertical-align: center;
 	z-index: 1;
 }
 
 .greeting {
-	font-size: 7em;
+	font-size: 8em;
+	padding-top: 30px;
 }
 
 .nomad {
 	text-shadow: 5px 5px 50px navy;
 	text-shadow: 30px 5px 5px 50px black;
 	color: white;
-	font-size: 10em;
+	font-size: 7em;
+	padding-top: 30px;
 }
 
 #header2 {
@@ -46,7 +47,7 @@ h2 {
 
 #header1 {
 	justify-items: center;
-	height: 500px;
+	/* height: 500px; */
 	/* opacity: 0.5; */
 	background-image: url("../images/nomadhero.jpg");
 	/* background-size: 100%; */
@@ -64,7 +65,7 @@ h2 {
 	width: 100%;
 	/* opacity: 0.1; */
 	/* background-color: transparent; */
-	background-color: rgba(0, 0, 200, 0.2);
+	background-color: rgba(0, 0, 200, 0.109);
 	border-radius: 25px;
 	vertical-align: center;
 	z-index: -1;
@@ -93,12 +94,12 @@ h2 {
 
 /* Turn the links purple when clicked */
 a:visited {
-    color: darkmagenta;
+	color: darkmagenta;
 }
 
 .scrollStyle {
-    max-height: 905px;
-    overflow-y: scroll;
+	max-height: 905px;
+	overflow-y: scroll;
 }
 
 /* ________FOR SURE FRONT PAGE STUFF. ABOVE NEEDS SESSING OUT________ */
@@ -195,6 +196,10 @@ a:visited {
 		align-self: center;
 		top: 0;
 	}
+	#vidOverlay,
+	.frontvid {
+		display: none;
+	}
 }
 
 /* ________PHONE-SCREEN -- CHANGE SO THIS IS DEFAULT AND DESKTOP IS QUERRIED________ */
@@ -203,6 +208,11 @@ a:visited {
 	.frontvid {
 		display: none;
 	}
+.firebaseui-idp-list > li.reveal,
+.firebaseui-card-footer.reveal {
+	height: auto;
+	opacity: 1;
+	visibility: visible;
 }
 
 /* ________OVERLAYS________ */
@@ -215,12 +225,12 @@ a:visited {
 }
 
 #headerOverlay {
-	background-color: rgba(19, 19, 95, 0.438);
+	background-color: rgba(19, 19, 95, 0.246);
 }
 
 /* possibly change color */
 #vidOverlay {
-	background-color: rgba(19, 19, 95, 0.438);
+	background-color: rgba(19, 19, 95, 0.274);
 }
 
 .firebaseui-idp-list > li,
