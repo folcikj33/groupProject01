@@ -50,3 +50,8 @@ button,
 	font-family: "alegreya sans SC";
 	font-size: 2em;
 }
+
+/* Turn the links purple when clicked */
+a:visited {
+    color: darkmagenta;
+}
