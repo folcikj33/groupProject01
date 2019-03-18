@@ -189,7 +189,7 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
         companyDiv.append("<u>" + titleList + "</u>" + ": ");
 
         var description = database[i].description;
-        console.log("DESCRIPTION: ", description)
+        //console.log("DESCRIPTION: ", description)
         // var descriptionText = $("<div>").html(description);
         // descriptionText.attr("style", "border: 2px solid black")
         companyDiv.append("<br />" + description + "<br /> ");
@@ -222,6 +222,5 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
       .push({
         link: link
       });
-
   })
 });

@@ -224,13 +224,8 @@ a:visited {
 	position: absolute;
 }
 
-<<<<<<< HEAD
-#headerOverlay {
-	background-color: rgba(19, 19, 95, 0.246);
-=======
 #headerOverlay, #headerOverlay-home {
 	background-color: rgba(19, 19, 95, 0.438);
->>>>>>> master
 }
 
 /* possibly change color */
@@ -258,3 +253,4 @@ a:visited {
 /* ________Saving this for the Nomad animation whereby it swoops in as "Now" but the w flips as the "a" and "d" are added_________ */
 /* @keyframe revealSignIn {
 } */
+}
