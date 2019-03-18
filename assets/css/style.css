@@ -189,8 +189,8 @@ h2 {
 	visibility: none;
 	opacity: 0;
 	height: 0;
-	-webkit-transition: height auto 4s, opacity 1 3s, visibility visible 0.1s,
-		3s;
+	-webkit-transition: height auto 4s, opacity 1 3s, visibility visible 0.1s;
+	transition-duration: 3s;
 	transition-timing-function: ease;
 }
 
