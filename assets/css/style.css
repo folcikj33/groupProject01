@@ -83,6 +83,11 @@ h2 {
 	font-size: 2em;
 }
 
+/* Turn the links purple when clicked */
+a:visited {
+    color: darkmagenta;
+}
+
 /* ________FOR SURE FRONT PAGE STUFF. ABOVE NEEDS SESSING OUT________ */
 
 .frontvid-container2 {
