@@ -102,6 +102,11 @@ a:visited {
 	overflow-y: scroll;
 }
 
+/* squeezing in the form and results */
+.container {
+	width: 80%;
+}
+
 /* ________FOR SURE FRONT PAGE STUFF. ABOVE NEEDS SESSING OUT________ */
 
 .frontvid-container2 {
