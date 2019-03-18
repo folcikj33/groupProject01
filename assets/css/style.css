@@ -1,41 +1,83 @@
 /* Small devices (landscape phones, 576px and up) */
 
+.frontPage {
+	margin: none;
+	align-content: center;
+	text-align: center;
+	overflow-x: hidden;
+}
+
 h1,
 h2 {
 	/* justify: center; */
 	font-family: "Alegreya Sans SC";
-	color: navy;
+	color: rgb(0, 0, 71);
+	text-shadow: 0px 1px 1px white;
 	font-weight: 900;
 	font-size: 3em;
 	letter-spacing: 50px;
-	vertical-align: center;
+	z-index: 1;
 }
 
-header {
-	justify: center;
-	height: 500px;
+.greeting {
+	font-size: 8em;
+	padding-top: 30px;
+}
+
+.nomad {
+	text-shadow: 5px 5px 50px navy;
+	text-shadow: 30px 5px 5px 50px black;
+	color: white;
+	font-size: 7em;
+	padding-top: 30px;
+}
+
+#header2 {
+	justify-items: center;
+	height: 300px;
 	/* background-position: center; */
 	opacity: 0.5;
 	background-image: url("../images/nomadhero.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	/* height: 100%; */
 	position: relative;
+}
+
+#header1 {
+	justify-items: center;
+	/* height: 500px; */
+	/* opacity: 0.5; */
+	background-image: url("../images/nomadhero.jpg");
+	/* background-size: 100%; */
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	/* height: 100%; */
+	position: relative;
+	z-index: 0;
 }
 
 .jumbotron1 {
 	justify-content: center;
 	position: absolute;
-	height: 500px;
+	height: 100%;
 	width: 100%;
 	/* opacity: 0.1; */
-	background-color: transparent;
+	/* background-color: transparent; */
+	background-color: rgba(0, 0, 200, 0.109);
 	border-radius: 25px;
 	vertical-align: center;
-	/* z-index: -1; */
+	z-index: -1;
 }
 
-.heady {
-	/* position: absolute; */
-	/* z-index: -1; */
-	opacity: 1;
+.heady,.heady-home {
+	display: flex;
+	justify: center;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+	/* z-index: 1; */
 }
 
 .form-group,
@@ -45,8 +87,174 @@ header {
 	font-family: "alegreya sans";
 }
 
-button,
 .card-header {
 	font-family: "alegreya sans SC";
 	font-size: 2em;
 }
+
+/* Turn the links purple when clicked */
+a:visited {
+	color: darkmagenta;
+}
+
+.scrollStyle {
+	max-height: 905px;
+	overflow-y: scroll;
+}
+
+/* ________FOR SURE FRONT PAGE STUFF. ABOVE NEEDS SESSING OUT________ */
+
+.frontvid-container2 {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	padding-top: 100px;
+	left: 50%;
+}
+
+.frontvid-button {
+	/* z-index: 1; */
+	display: inline-block;
+	text-align: center;
+	/* position: absolute; */
+	font-family: "alegreya sans SC";
+	font-size: 2em;
+	text-shadow: 0px 1px 10px white;
+	border: none;
+	background-color: transparent;
+}
+
+.buttonWrapper {
+	background: transparent;
+	text-align: center;
+}
+
+.get-started {
+	border: 4px solid black;
+	border-radius: 30px;
+	height: 80px;
+	width: 180px;
+	box-shadow: 0px 0px 1px 1px white;
+	/* width: 0px; */
+	text-align: center;
+	/* height: 0px; */
+}
+
+.about-app {
+	border: 4px solid black;
+	border-radius: 30px;
+	box-shadow: 0px 0px 1px 1px white;
+	bottom: 0px;
+	width: 220px;
+	height: 80px;
+	background-color: transparent;
+	position: relative;
+	bottom: 0px;
+}
+
+.frontvid {
+	position: absolute;
+	top: 0px;
+	text-align: center;
+	left: 0px;
+	right: 0px;
+}
+
+.frontvid-container1 {
+	/* display: flex;
+	flex-direction: column; */
+	height: 110%;
+	width: 100%;
+	max-width: 100%;
+	justify: center;
+}
+
+#vid-itself {
+	height: 100%;
+	min-width: 100%;
+	max-width: 160%;
+}
+
+/* ________SET FOR PHONE-FIRST CONVERSION ________ */
+@media screen and (min-width: 994px) {
+	#header1,
+	.heady,
+	#headerOverlay,
+	.jumbotron1 {
+		display: none;
+	}
+}
+
+/* ________TABLET -- NOTICE NOTE DOWN BELOW________ */
+@media only screen and (max-width: 994px) {
+	.frontvid {
+		/* height: 140%; */
+		min-width: 100%;
+		/* display: inline-block; */
+		position: relative;
+		align-self: center;
+		top: 0;
+	}
+	#vidOverlay,
+	.frontvid {
+		display: none;
+	}
+}
+
+/* ________PHONE-SCREEN -- CHANGE SO THIS IS DEFAULT AND DESKTOP IS QUERRIED________ */
+@media only screen and (max-width: 748px) {
+	#vidOverlay,
+	.frontvid {
+		display: none;
+	}
+.firebaseui-idp-list > li.reveal,
+.firebaseui-card-footer.reveal {
+	height: auto;
+	opacity: 1;
+	visibility: visible;
+}
+
+/* ________OVERLAYS________ */
+.overlay {
+	min-height: 100%;
+	max-height: 100%;
+	min-width: 100%;
+	max-width: 100%;
+	position: absolute;
+}
+
+<<<<<<< HEAD
+#headerOverlay {
+	background-color: rgba(19, 19, 95, 0.246);
+=======
+#headerOverlay, #headerOverlay-home {
+	background-color: rgba(19, 19, 95, 0.438);
+>>>>>>> master
+}
+
+/* possibly change color */
+#vidOverlay {
+	background-color: rgba(19, 19, 95, 0.274);
+}
+
+.firebaseui-idp-list > li,
+.firebaseui-card-footer {
+	visibility: none;
+	opacity: 0;
+	height: 0;
+	-webkit-transition: height auto 4s, opacity 1 3s, visibility visible 0.1s;
+	transition-duration: 3s;
+	transition-timing-function: ease;
+}
+
+.firebaseui-idp-list > li.reveal,
+.firebaseui-card-footer.reveal {
+	height: auto;
+	opacity: 1;
+	visibility: visible;
+}
+
+/* ________Saving this for the Nomad animation whereby it swoops in as "Now" but the w flips as the "a" and "d" are added_________ */
+/* @keyframe revealSignIn {
+} */

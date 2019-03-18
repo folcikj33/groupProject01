@@ -75,9 +75,7 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
 
 
   //==================GETS CITY FROM DROPDOWN==============================================
-  //city variable doesn't seem to be working 
   var city = $("#city-selected option:selected").text();
-  //var city = $("#exampleFormControlSelect1: selected") .text ();
   console.log("CITY!!", city)
   var where = city;
   var locationEncoded = encodeURI(where);
@@ -86,9 +84,7 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
 
   //==================GETS EMPLOYMENT TYPE FROM DROPDOWN===================================
   var jobType = $("#job-selected option:selected").text();
-  //var city = $("#exampleFormControlSelect1: selected") .text ();
   console.log("JOB!!", jobType)
-  //var type = jobType;
   if (jobType == "Full-Time") {
     var jobAPI = "&full_time=1"
   } else if (jobType == "Part-Time") {
@@ -115,7 +111,7 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
 
 
   //==================GETS AGE FROM USER-SUBMITTED FORM===================================
-  //age in days
+  //age of job posting in days
   var age;
   if ($("#exampleFormControlInput3").val()) {
     age = $("#exampleFormControlInput3").val()
@@ -131,7 +127,7 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
   const salary = 1;
 
   const queryURL =
-    "https://api.adzuna.com:443/v1/api/jobs/us/search/1?app_id=e6cd0ed5&app_key=0f19421e3255011b31ce0bf4464db591%09&results_per_page=10&what_phrase=" +
+    "https://api.adzuna.com:443/v1/api/jobs/us/search/1?app_id=e6cd0ed5&app_key=0f19421e3255011b31ce0bf4464db591%09&results_per_page=300&what_phrase=" +
     keywordEncoded +
     "&where=" +
     locationEncoded +
@@ -153,9 +149,9 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
     var database = response.results;
     console.log(database);
 
-    //NICK'S IF STATEMENT==========================================
+    //NICK'S IF STATEMENT (tells users if there's no jobs available)==========================================
     if (database.length > 0) {
-      //NICK'S IF STATEMENT========================================
+      //NICK'S IF STATEMENT===================================================================================
 
 
 
@@ -168,11 +164,28 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
 
       for (i = 0; i < database.length; i++) {
         var companyList = database[i].company.display_name;
+        //===============New Code=================================
+        let newTable = $("<table>").attr("class", "table")
+        let tHead = $("<thead>")
+        //===============New Code=================================
+
         var companyDiv = $("<div>").attr("class", "company-" + i);
-        companyDiv.append(companyList + ": ");
+        //companyDiv.append(companyList + ": ");
+
+        //===============New Code=================================
+        let newTR = $("<tr>")
+        let newTH = $("<th>").attr("scope", "col")
+        newTH.html(companyList);
+        newTH.attr("style", "text-align: center")
+        newTR.append(newTH);
+        tHead.append(newTR);
+        newTable.append(tHead);
+
+        companyDiv.append(newTable);
+        //===============New Code=================================
 
         var titleList = database[i].title;
-        companyDiv.append(titleList + " ");
+        companyDiv.append(titleList + ": ");
 
         var description = database[i].description;
         companyDiv.append("<br />" + description + "<br /> ");
@@ -184,8 +197,6 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
           .attr("class", "btn-default")
           .text("Apply!");
         companyDiv.append(applyButton);
-
-        companyDiv.append("<hr />");
 
         $("#job-results").append(companyDiv);
         // console.log(user);
