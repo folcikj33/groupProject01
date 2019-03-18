@@ -9,7 +9,51 @@ var config = {
 };
 firebase.initializeApp(config);
 //REMEMBER TO CHANGE THIS KEYWORD BECAUSE DATABASE IS USED LATER
-var database = firebase.database()
+var database = firebase.database();
+var user;
+firebase.auth().onAuthStateChanged(function () {
+  user = firebase.auth().currentUser;
+  console.log(user);
+  currentUserID = user.uid;
+  console.log(currentUserID);
+  if (user != null) {
+    database
+      .ref("users")
+      .child(user.uid)
+      .set({
+        email: user.email,
+        displayName: user.displayName,
+        newUser: true
+      });
+  }
+});
+// var ref = new Firebase("https://groupproject01-91c86.firebaseio.com");
+// // Generate a new push ID for the new post
+// var newPostRef = ref.child("posts").push();
+// var newPostKey = newPostRef.key();
+// // Create the data we want to update
+// var updatedUserData = {};
+// updatedUserData["user/posts/" + newPostKey] = true;
+// updatedUserData["posts/" + newPostKey] = {
+//   title: "New Post",
+//   content: "Here is my new post!"
+// };
+// Do a deep-path update
+// ref.update(updatedUserData, function (error) {
+//   if (error) {
+//     console.log("Error updating data:", error);
+//   }
+// });
+// database.ref(userId + '/jobAPI').push({
+//   stuff: 
+// })
+// const key = firebase.database().ref().push().key
+// function writeFavoritesList(name, videoID, toggleValue) {
+//   firebase.database().ref('jobAPI/' + userId).set({
+//     name: displayName,
+//     videoID: videoID,
+//     toggleValue: true
+//   });
 
 //Testing the Adzuna API
 
@@ -159,9 +203,25 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
         companyDiv.append(applyButton);
 
         $("#job-results").append(companyDiv);
+        // console.log(user);
+
       }
     } else {
       $("#job-results").append("0 jobs found on Adzuna.")
     }
   })
-})
+
+  $(document).on("click", "a", function () {
+
+    var link = $(this).attr("href");
+    console.log(link);
+
+    database
+      .ref("users")
+      .child(user.uid)
+      .push({
+        link: link
+      });
+
+  })
+});
