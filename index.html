@@ -29,21 +29,53 @@
 		<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
 	</head>
 
-	<body>
+	<body class="frontPage">
 		<!-- The surrounding HTML is left untouched by FirebaseUI.
          Your app may use that space for branding, controls and other customizations.-->
-		<header>
+		<header id="header1">
+		
+			<div class="overlay" id="headerOverlay"></div>
 			<div class="jumbotron jumbotron-fluid jumbotron1"></div>
 			<div class="heady">
-				<h1 class="display-1 text-center">Welcome to Nomad!</h1>
+				<h1 class="display-4 text-center justify-center">
+					Welcome to </h1>
+				<h1 class="display-1 text-center justify-center">
+					Nomad
+				</h1>
 				<br />
-				<h2 class="display-10 text-center">
-					Search for Jobs with your Next Destination
-				</h2>
+				<!-- <p class="display-10 text-center">
+							Search Job Openings
+						</h2>
+						<h2 class="display-10 text-center">
+							Compare City Ratings
+						</h2>
+						<h2 class="display-10 text-center">
+							Plan Your Next Move
+						</h2> -->
 			</div>
 		</header>
+		<div class="frontvid frontvid-container1">
+			<video class="d-inline-block sm-none" id="vid-itself" autoplay muted loop>
+				<source class="frontvid" src="./assets/images/nomad-placeholder-stock-footage.mov"></source>
+				
+			</video>
+			<div class="overlay frontvid" id="vidOverlay"></div>
+			<div class="frontvid frontvid-container2 text-center justify-center">
+				<h1 class="display-4 text-center justify-center">Welcome to</h1>
+				<h1 class="display-1 text-center justify-center nomad">Nomad</h1>
+				<div>
+					<div class="frontvid-button get-started text-center justify-center" type="button">Get Started</div>
+				</div>
+				<div>
+					<div class="frontvid-button about-app text-center justify-center" type="button">About Nomad</div>
+				</div>
+				
+			</div>
+			
+		</div>
+		 
 
-		<div id="firebaseui-auth-container"></div>
+		<div class="firebase-container d-inline d-none" id="firebaseui-auth-container"></div>
 		<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
 
 		<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
@@ -102,6 +134,15 @@
 						});
 				}
 			});
+
+			// _________JAKE EXPERIMENTING; PROBABLY JUNK IF AFTER 12:00 3/18/19__________ 
+			var getStarted = function getStarted(){
+				$.get-started.on("click", function() {
+					$.firebaseui-idp-list li.toggleClass("reveal");
+					$.firebaseui-card-footer.toggleClass("reveal");
+				})
+			};
+			getStarted();
 		</script>
 	</body>
 </html>
