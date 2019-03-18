@@ -1,10 +1,33 @@
-/* Small devices (landscape phones, 576px and up) */
+/* ----------------------------------------------------------- */
+/* Small devices are treated as default (landscape phones, 576px - ~748px)
+/* ----------------------------------------------------------- */
+
+/* @media only screen and (max-width: 748px) { */
+#vidOverlay,
+.frontvid {
+	display: none;
+}
+/* } */
+
+/*---Using this as a lense or filter that fits its parent div and only taints the things beneath--- */
+.overlay {
+	min-height: 100%;
+	max-height: 100%;
+	min-width: 100%;
+	max-width: 100%;
+	position: absolute;
+}
+
+/* ----------------------------------------------------------- */
+/* Root elements or otherwise most regular elements and take */
+/* are of broadest and most shared rules first */
+/* ----------------------------------------------------------- */
 
 .frontPage {
 	margin: none;
 	align-content: center;
 	text-align: center;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 h1,
@@ -22,14 +45,17 @@ h2 {
 .greeting {
 	font-size: 6em;
 }
+
+/*The name of the App should be special and consistent*/
 .nomad {
 	text-shadow: 5px 5px 50px navy;
-	text-shadow: 30px 5px 5px 50px black;
+	text-shadow: 30px 30px 30px 50px black;
+	font-family: "Alegreya Sans SC";
 	color: white;
 	font-size: 6em;
 }
 
-#header2 {
+#homeHeader {
 	justify-items: center;
 	height: 300px;
 	/* background-position: center; */
@@ -42,7 +68,7 @@ h2 {
 	position: relative;
 }
 
-#header1 {
+#indexHeader {
 	justify-items: center;
 	/* height: 500px; */
 	/* opacity: 0.5; */
@@ -55,27 +81,28 @@ h2 {
 	z-index: 0;
 }
 
-.jumbotron1 {
+/* originally used as 'overlay', but holds mysterious bootstrap properties */
+/* .jumbotron1 {
 	justify-content: center;
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	/* opacity: 0.1; */
-	/* background-color: transparent; */
+	opacity: 0.1;
+	background-color: transparent;
 	background-color: rgba(0, 0, 200, 0.109);
 	vertical-align: center;
+	padding-top: 100px;
 	z-index: -1;
-}
+} */
 
-.heady,
-.heady-home {
+.responsiveGreetingContainer,
+.homeNomadContainer {
 	display: flex;
 	justify: center;
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
 	/* height: 100%; */
-	/* z-index: 1; */
 }
 
 .form-group,
@@ -90,15 +117,20 @@ h2 {
 	font-size: 2em;
 }
 
-/* Turn the links purple when clicked */
+/* ----------------------------------------------------------- */
+/* Make un-clicked links blue and visited ones purple */
+/* ----------------------------------------------------------- */
 a:link {
-	text-decoration: none;
+	text-decoration: blue;
 }
 
 a:visited {
 	color: darkmagenta;
 }
 
+/* ----------------------------------------------------------- */
+/* Form & results scroll-bar and container for results */
+/* ----------------------------------------------------------- */
 .scrollStyle {
 	max-height: 905px;
 	overflow-y: scroll;
@@ -109,115 +141,107 @@ a:visited {
 	width: 80%;
 }
 
-/* ________FOR SURE FRONT PAGE STUFF. ABOVE NEEDS SESSING OUT________ */
+/* ----------------------------------------------------------- */
+/* Buttons */
+/* There was a button named "Get Started", but it proved to be redundant */
+/* But an artist's creations never die, only sleep... */
+/* ----------------------------------------------------------- */
 
-.frontvid-container2 {
-	position: absolute;
-	display: flex;
-	flex-direction: column;
+.buttonWrapper {
+	/* border: 2px solid black; <-(to see boundaries) */
+	background-color: transparent;
 	text-align: center;
-	/* padding-top: 100px; */
-	/* left: 40%; */
 }
 
-.frontvid-button {
-	/* z-index: 1; */
+.normalButtonTheme {
+	border: 2px solid black;
+	height: 80px;
+	width: 180px;
+	text-align: center;
 	display: inline-block;
 	text-align: center;
-	/* position: absolute; */
 	font-family: "alegreya sans SC";
 	font-size: 2em;
-	text-shadow: 0px 1px 10px white;
-	border: none;
+	text-shadow: 1px 1px 1px white;
+	box-shadow: 5px 0px 40px rgb(0, 0, 0);
 	background-color: transparent;
 }
 
-.buttonWrapper {
-	background: transparent;
-	text-align: center;
+.frontvid-button {
+	/* border: 2px solid black; <-(unclear if necessary) */
+	font-size: 2em;
+	background-color: rgba(220, 220, 250, 0.3);
+	display: none;
 }
 
-.get-started {
-	border: 2px solid black;
-	/* border-radius: 30px; */
-	height: 80px;
-	width: 180px;
-	/* box-shadow: 0px 0px 1px 1px white; */
-	/* width: 0px; */
-	text-align: center;
-	/* height: 0px; */
+/* ----------------------------------------------------------- */
+/* For tablet eyes only (~748px - ~994px) */
+/* ----------------------------------------------------------- */
+
+@media only screen and (min-width: 748px) {
+	.frontvid {
+		/* height: 140%; */
+		/* display: inline-block; */
+		position: relative;
+		min-width: 100%;
+		align-self: center;
+		top: 0;
+	}
+	#firebaseui-auth-container {
+		position: static;
+		top: 100px;
+	}
+
+	#vidOverlay,
+	.frontvid {
+		display: none;
+	}
 }
 
-.frontvid {
-	position: absolute;
-	top: 0px;
-	text-align: center;
-	left: 0px;
-	right: 0px;
-}
+/* ----------------------------------------------------------- */
+/* Everything that pertains to the stock-footage background video, */
+/* which is only to be displayed on large screens (994px +) */
+/* ----------------------------------------------------------- */
 
-.frontvid-container1 {
-	/* display: flex;
-	flex-direction: column; */
-	height: 110%;
-	width: 100%;
-	max-width: 100%;
-	justify: center;
-}
-
-#vid-itself {
-	height: 100%;
-	min-width: 100%;
-	max-width: 160%;
-}
-
-/* ________SET FOR PHONE-FIRST CONVERSION ________ */
 @media screen and (min-width: 994px) {
-	#header1,
-	.heady,
+	#indexHeader,
+	#homeHeader,
 	#headerOverlay,
 	.jumbotron1 {
 		display: none;
 	}
+	.frontvid {
+		position: absolute;
+		top: 0px;
+		text-align: center;
+		left: 0px;
+		right: 0px;
+	}
+	.frontvid-container1 {
+		/* display: flex;
+		flex-direction: column; */
+		height: 110%;
+		width: 100%;
+		max-width: 100%;
+		justify: center;
+	}
+	#vid-itself {
+		height: 100%;
+		min-width: 100%;
+		max-width: 160%;
+	}
+
+	.frontvid-container2 {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		/* padding-top: 100px; */
+		/* left: 40%; */
+	}
 }
 
 /* ________TABLET________ */
-@media only screen and (max-width: 994px) {
-	.frontvid {
-		/* height: 140%; */
-		min-width: 100%;
-		/* display: inline-block; */
-		position: relative;
-		align-self: center;
-		top: 0;
-	}
-	/* #firebaseui-auth-container {
-		margin-top: 250px;
-	} */
-
-	#vidOverlay,
-	.frontvid,
-	.overlay {
-		display: none;
-	}
-}
-
-/* ________PHONE-SCREEN -- CHANGE SO THIS IS DEFAULT AND DESKTOP IS QUERRIED________ */
-@media only screen and (max-width: 748px) {
-	#vidOverlay,
-	.frontvid {
-		display: none;
-	}
-}
-
-/* ________OVERLAYS________ */
-.overlay {
-	min-height: 100%;
-	max-height: 100%;
-	min-width: 100%;
-	max-width: 100%;
-	position: absolute;
-}
 
 #headerOverlay,
 #headerOverlay-home {
@@ -226,13 +250,13 @@ a:visited {
 
 /* possibly change color */
 #vidOverlay {
-	background-color: rgba(224, 224, 224, 0.459);
+	background-color: rgba(230, 232, 253, 0.671);
 }
 
 #firebaseui-auth-container {
 	/* position: absolute; */
 	/* padding: 400px; */
-	margin-top: 450px;
+	margin-top: 430px;
 	align: center;
 	margin-left: 25%;
 	margin-right: 25%;
