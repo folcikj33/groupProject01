@@ -1,5 +1,10 @@
 /* Small devices (landscape phones, 576px and up) */
 
+.frontPage {
+	margin: none;
+	align-content: center;
+}
+
 h1,
 h2 {
 	/* justify: center; */
@@ -12,24 +17,28 @@ h2 {
 }
 
 header {
-	justify: center;
-	height: 500px;
+	justify-items: center;
+	height: 300px;
 	/* background-position: center; */
 	opacity: 0.5;
 	background-image: url("../images/nomadhero.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	/* height: 100%; */
 	position: relative;
 }
 
 .jumbotron1 {
 	justify-content: center;
 	position: absolute;
-	height: 500px;
+	height: 300px;
 	width: 100%;
 	/* opacity: 0.1; */
 	background-color: transparent;
 	border-radius: 25px;
 	vertical-align: center;
-	/* z-index: -1; */
+	z-index: -1;
 }
 
 .heady {
@@ -49,4 +58,42 @@ button,
 .card-header {
 	font-family: "alegreya sans SC";
 	font-size: 2em;
+}
+
+.frontvid {
+	min-height: 100%;
+	/* align-self: auto; */
+	min-width: 100%;
+	max-width: 150%;
+	/* overflow: hidden; */
+	/* padding: 50%; */
+	/* left: 0; */
+	position: absolute;
+	/* margin: none; */
+	top: 0px;
+}
+
+@media only screen and (max-width: 994px) {
+	.frontvid {
+		height: 140%;
+		min-width: 100%;
+		display: inline-block;
+		position: fixed;
+		align-self: center;
+	}
+}
+
+@media only screen and (max-width: 748px) {
+	.frontvid {
+		display: none;
+	}
+}
+
+#vidOverlay {
+	min-height: 100%;
+	max-height: 100%;
+	min-width: 100%;
+	max-width: 100%;
+	position: fixed;
+	background-color: rgba(19, 19, 95, 0.438);
 }
