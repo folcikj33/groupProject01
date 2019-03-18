@@ -229,20 +229,20 @@ a:visited {
 	background-color: rgba(224, 224, 224, 0.459);
 }
 
-/* #firebaseui-auth-container { */
-/* position: absolute; */
-/* padding: 400px; */
-/* margin-top: 450px; */
-/* align: center; */
-/* margin-left: 25%; */
-/* margin-right: 25%; */
-/* } */
+#firebaseui-auth-container {
+	/* position: absolute; */
+	/* padding: 400px; */
+	margin-top: 450px;
+	align: center;
+	margin-left: 25%;
+	margin-right: 25%;
+}
 
 .firebaseui-idp-list > li,
 .firebaseui-card-footer {
 	/* #firebaseui-auth-container { */
-	visibility: none;
-	opacity: 0;
+	/* visibility: none; */
+	/* opacity: 0; */
 	margin-top: 30px;
 	-webkit-transition: height auto 4s, opacity 1, visibility visible,
 		padding-top 50px;
