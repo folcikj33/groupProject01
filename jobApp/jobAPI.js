@@ -85,7 +85,8 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
   const queryURL =
     "https://api.adzuna.com:443/v1/api/jobs/us/search/1?app_id=e6cd0ed5&app_key=0f19421e3255011b31ce0bf4464db591%09&results_per_page=300&what_phrase=" +
     keywordEncoded +
-    "&where=" +
+    //Revature excluded because it's annoying
+    "&what_exclude=revature&where=" +
     locationEncoded +
     "&distance=" +
     distance +
@@ -141,9 +142,12 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
         //===============New Code=================================
 
         var titleList = database[i].title;
-        companyDiv.append(titleList + ": ");
+        companyDiv.append("<u>" + titleList + "</u>" + ": ");
 
         var description = database[i].description;
+        console.log("DESCRIPTION: ", description)
+        // var descriptionText = $("<div>").html(description);
+        // descriptionText.attr("style", "border: 2px solid black")
         companyDiv.append("<br />" + description + "<br /> ");
 
         var applyButton = $("<a>")
