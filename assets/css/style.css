@@ -88,6 +88,11 @@ a:visited {
     color: darkmagenta;
 }
 
+.scrollStyle {
+    max-height: 905px;
+    overflow-y: scroll;
+}
+
 /* ________FOR SURE FRONT PAGE STUFF. ABOVE NEEDS SESSING OUT________ */
 
 .frontvid-container2 {
