@@ -24,6 +24,7 @@ function databaseListener(uid) {
   console.log("tryna listen!")
   database.ref("users").on('child_changed', function (childSnapshot) {
     var user = childSnapshot.val();
+    $("#recent-clicks").empty()
     for (var key in user) {
 
       if (typeof user[key].link === "string" && typeof user[key].job_title === "string") {
