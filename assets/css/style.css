@@ -1,6 +1,7 @@
 /* ----------------------------------------------------------- */
-/* Small devices are treated as default (landscape phones, 576px - ~768px)
+/* Start with small devices since they are treated as default 
 /* ----------------------------------------------------------- */
+/* (landscape phones, 576px - ~768px) */
 
 #vidOverlay,
 .frontvid {
@@ -15,13 +16,13 @@ its parent div and only taints the things beneath */
 	max-height: 100%;
 	min-width: 100%;
 	max-width: 100%;
-	color: rgba(255, 255, 255 0.1);
+	/* color: rgba(255, 255, 255 0.1); */
 	position: absolute;
-	/* display: none; */
+	display: none;
 }
 
 /* ----------------------------------------------------------- */
-/* Root elements/heading elements */
+/* Root elements & heading elements */
 /* ----------------------------------------------------------- */
 
 .frontPage {
@@ -33,88 +34,79 @@ its parent div and only taints the things beneath */
 
 h1,
 h2 {
-	/* justify: center; */
-	font-family: "Alegreya Sans SC";
+	font-family: "krona one";
 	color: rgb(255, 255, 255);
 	text-shadow: 50px 10px 50px rgb(0, 153, 224);
-	text-shadow: -50px -10px -50px rgb(0, 153, 224);
+	/* text-shadow: -50px -10px -50px rgb(0, 153, 224); */
 	font-weight: 900;
 	font-size: 3em;
 	letter-spacing: 15px;
 	z-index: 1;
 }
 
-#homeHeader {
-	justify-items: center;
-	height: 300px;
-	width: 100%;
-	background-position: center;
-	opacity: 0.5;
-	background-image: url("../images/nomadhero.jpg");
-	background-size: 100%;
-	background-repeat: no-repeat;
-	/* background-attachment: fixed; */
-	/* height: 100%; */
-	position: relative;
-}
+/* Usin this background image like this messes with the video  */
 
-#indexHeader {
-	position: absolute;
-	/* justify-items: center; */
-	background-color: rgba(0, 0, 0, 0.7);
-	background-image: url("../images/pinterest-skyscrapers.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	z-index: 0;
+@media only screen and (max-width: 900px) {
+	#indexHeader {
+		position: absolute;
+		justify-items: center;
+		background-color: rgba(0, 0, 0, 0.7);
+		background-image: url("../images/pinterest-skyscrapers.jpg");
+		/* background-size: cover; */
+		background-repeat: no-repeat;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		z-index: 0;
+	}
 }
-
 #headerOverlay,
 #headerOverlay-home {
 	background-color: rgba(230, 232, 253, 0.3);
-	z-index: 1;
-	/* -webkit-filter: blur(8px); */
+	/* z-index: 0; */
+	height: 100%;
+	width: 100%;
+	position: absolute;
 }
 
 .jumbotron1 {
-	/* position: fixed; */
+	position: absolute;
 	/* margin: auto; */
+	height: 100%;
 	width: 100%;
 	background-color: rgba(0, 0, 0, 0.425);
-	height: 700px;
-	z-index: 2;
+	z-index: 1;
 	bottom: 30%;
-	bottom: 40%;
+	top: 40%;
 }
 
 #firebaseui-auth-container {
-	/* position: absolute; */
-	/* padding: 400px; */
-	margin-top: 0px;
+	margin-top: 450px;
 	text-align: center;
-	margin-left: 30%;
-	margin-right: 30%;
+	margin-left: 25%;
+	margin-right: 25%;
 }
 
+/*The containers that keep the words of the respective headers organized */
 /* ----------------------------------------------------------- */
-/* The containers that keep the words of the respective headers organized */
-/* ----------------------------------------------------------- */
-.responsiveGreetingContainer,
-.homeNomadContainer {
-	position: absolute;
+
+.responsiveGreetingContainer {
 	display: flex;
-	flex-basis: auto;
+	position: absolute;
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
 	height: 100%;
-	z-index: auto;
+	z-index: 1;
+	top: 0px;
 }
-.greeting {
-	font-size: 6em;
-	line-break: 2;
+.greeting1 {
+	font-size: 3em;
+	padding: 40px;
+	padding-top: 100px;
+	/* line-break: 2; */
+	/* padding: 40px; */
+	/* margin: 40px; */
 }
 .nomad {
 	text-shadow: 5px 5px 50px navy;
@@ -122,90 +114,100 @@ h2 {
 	text-shadow: -30px -30px 30px 50px black;
 	font-family: "lalezar";
 	color: whitesmoke;
-	font-size: 10em;
-	margin: 0;
-
+	font-size: 8em;
+	/* margin: 0; */
 	padding-top: 10px;
 }
 
 /* ----------------------------------------------------------- */
-/* Buttons style/info
+/* Buttons style/info */
 /* ----------------------------------------------------------- */
-/* 
+
 .buttonWrapper {
-	border: 2px solid black;
-	background-color: transparent;
-	text-align: center;
-	z-index: 2;
-} */
+	/* border: 2px solid black; */
+	/* position: relative; */
+	/* display: inline-block; */
+	background: transparent;
+	/* text-align: center; */
+	/* z-index: 2; */
+	/* overflow-y: visible; */
+}
 
 .buttonTheme {
+	position: relative;
 	border: 2px solid black;
-	height: 80px;
+	height: 50px;
 	width: auto;
 	text-align: center;
 	display: inline-block;
-	text-align: center;
 	font-family: "krona one";
-	font-size: 2em;
-	transition-duration: 0.3s;
-	/* overflow: visible; */
+	font-size: 1.5em;
+	transition-duration: 0.5s;
 	background-color: transparent;
-	z-index: 2;
+	align-self: stretch;
+}
+.buttonTheme:hover {
+	text-shadow: 5px 5px 10px black;
+	box-shadow: 40px, 10px, 40px, black;
+	background-color: rgba(15, 0, 146, 0.24);
+	color: whitesmoke;
 }
 
 .frontvid-button {
-	/* border: 2px solid black; <-(unclear if necessary) */
 	font-size: 2em;
 	top: 600px;
-	background-color: rgba(220, 220, 250, 0.3);
-	/* display: none; */
+	background-color: rgba(220, 220, 250, 0.2);
+	display: block;
 	position: absolute;
-}
-
-.buttonTheme:hover {
-	text-shadow: 5px 5px 10px black;
-	box-shadow: 40px 10px 40px black;
-	background-color: rgba(15, 0, 146, 0.415);
-	color: white;
 }
 
 /* ----------------------------------------------------------- */
 /* For tablet (~748px - ~994px) */
 /* ----------------------------------------------------------- */
 
-@media only screen and (min-width: 748px) {
+/* @media only screen and (min-width: 748px)  <--- google how to do two queries at same time*/
+@media only screen and (max-width: 994px) {
 	.frontvid {
-		height: 140%;
-		display: inline-block;
-		position: relative;
-		min-width: 100%;
+		height: 140px;
+		/* display: ; */
+		position: absolute;
 		align-self: center;
-		top: 0;
+		text-align: center;
+		top: 0px;
+		left: 0px;
+		/* right: 0px; */
+		min-width: 100%;
 	}
 	#firebaseui-auth-container {
 		position: absolute;
-		/* bottom: 0px; */
-		/* margin: 0; */
+		bottom: 0px;
+		margin: 0px;
 	}
 
 	#indexHeader {
 		background-image: url("../images/pinterest-skyscrapers.jpg");
+		background-size: stretch;
+		background-position: center;
+		background-attachment: fixed;
 		z-index: 1;
 		background-repeat: no-repeat;
-		margin: 0;
+		position: relative;
+		/* margin: 0; */
 		height: 100%;
-	}
-
-	#vidOverlay,
-	.frontvid {
-		display: none;
+		width: 100%;
 	}
 }
 
+#vidOverlay,
+.frontvid,
+.overlay {
+	display: none;
+}
+
 /* ----------------------------------------------------------- */
+/*     (994px +)
 /* Everything that pertains to the stock-footage background video, */
-/* which is only to be displayed on large screens (994px +) */
+/* Only to be displayed on large screens  */
 /* ----------------------------------------------------------- */
 
 @media screen and (min-width: 994px) {
@@ -213,46 +215,53 @@ h2 {
 	#headerOverlay,
 	.jumbotron1 {
 		display: none;
+		/* visibility: hidden; */
 	}
 
 	.frontvid {
-		position: absolute;
+		display: block;
+		position: fixed;
 		top: 0px;
 		bottom: 0px;
-		height: 100%;
+		min-height: 140%;
+		min-width: 100%;
 		text-align: center;
-		size: cover;
-		/* left: 0px; */
-		/* right: 0px; */
+		background-size: stretch;
+		z-index: 1;
+		/* left: 0px;
+		 right: 0px; */
 	}
 
 	#vidOverlay {
-		background-color: rgba(230, 232, 253, 0.671);
+		background-color: rgba(230, 232, 253, 0.267);
 		position: absolute;
 		/* visibility: hidden; */
-		display: inherit;
-		size: cover;
-		z-index: 1;
+		/* display: none; */
+		size: stretch;
+		/* z-index: 1; */
 		/* display: inline; */
 	}
 
-	/* container holds video, text, and any input buttons not from firebase */
+	/* container that holds video, text, and any input buttons not from firebase */
 	/* -----> */
 	.frontvid-container1 {
-		display: flex;
-		flex-direction: column;
+		/* display: flex; */
+		/* flex-direction: column; */
+		position: relative;
 		height: 110%;
 		min-width: 100%;
 		max-width: 160%;
-		/* justify-content: space-around; */
+		justify-content: space-around;
 	}
 	#vid-itself {
-		display: inline-block;
-		position: absolute;
+		/* display: inline-block; */
+		/* position: absolute; */
+		background-color: rgba(230, 232, 253, 0.267);
 		height: 110%;
 		min-width: 100%;
 		max-width: 160%;
-		size: cover;
+		/* size: cover; */
+		/* z-index: 1; */
 	}
 
 	/* contains strictly the headings and and buttons that might go over the video */
@@ -261,33 +270,35 @@ h2 {
 		display: flex;
 		flex-direction: column;
 		text-align: center;
+		/* top: 50%; */
+		/* align-self: center; <--- possibly keep */
 		/* padding-top: 100px; */
 		/* left: 40%; */
 	}
 }
-
-.firebaseui-idp-list > li,
-.firebaseui-card-footer,
+/* .firebaseui-idp-list > li,
+/* .firebaseui-card-footer, */
 #firebaseui-auth-container {
-	display: none;
+	visibility: hidden;
 	opacity: 0;
 	margin-top: 30px;
-	-webkit-transition: height auto, opacity 1, visibility visible,
-		padding-top 50px;
 	transition-duration: 3s;
 	transition-timing-function: ease-in;
+	-webkit-transition: height, "auto";
+	opacity: 1;
+	visibility: visible;
+	padding-top: 50px;
 }
 
-.firebaseui-idp-list > li.reveal,
-.firebaseui-card-footer.reveal {
-	/* #firebaseui-auth-container { */
+/* .firebaseui-idp-list > li.reveal,
+.firebaseui-card-footer.reveal #firebaseui-auth-container.reveal {
 	height: auto;
 	opacity: 1;
 	visibility: visible;
 	margin: 0;
-	/* margin-top: 450px; */
-	/* padding-top: 50px; */
-}
+	margin-top: 450px;
+	padding-top: 50px;
+} */
 
 /* ________Saving this for the Nomad animation whereby it swoops in as "Now" but the w flips as the "a" and "d" are added_________ */
 /* @keyframe revealSignIn {

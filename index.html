@@ -15,12 +15,15 @@
 	<link href='https://fonts.googleapis.com/css?family=Krona One' rel='stylesheet'>
 	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 	<link href="https://fonts.googleapis.com/css?family=Alegreya Sans SC" rel="stylesheet" />
+	
+	<link rel="stylesheet" type="text/css" href="./assets/css/style2.css" />
 	<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+	
 </head>
 
 <body class="frontPage">
 	<!-- The surrounding HTML is left untouched by FirebaseUI.
-         Your app may use that space for branding, controls and other customizations.-->
+         Your app may use that space for branding, controls and other customization's.-->
 	<header id="indexHeader">
 		<div class="overlay" id="headerOverlay">
 
@@ -29,21 +32,15 @@
 			
 		<div class="responsiveGreetingContainer">
 
-			<h1 class="display-4 text-center justify-center">
+			<h2 class="display-4 text-center justify-center">
 				Welcome to 
-			</h1> 
-			<br>
-			<br>
-			<br>
+			</h2> 
 
 			<h1 class="nomad display-1 text-center justify-center">
 				Nomad
 			</h1>
 			</div>
-			<div class="buttonWrapper">
-				<input class="frontvid-button buttonTheme shadow-lg p4 text-center justify-center" type="button" value="Get Started">
-			</div>
-			<br />
+			
 			<!-- <p class="display-10 text-center">
 							Search Job Openings
 						</h2>
@@ -54,30 +51,28 @@
 							Plan Your Next Move
 						</h2> -->
 		</div>
+		<div class="buttonWrapper">
+			<input class="frontvid-button buttonTheme shadow-lg p4 text-center justify-center" type="button"
+				value="Get Started">
+		</div>
 	
 	</header>
 	<div class="frontvid frontvid-container1">
 
-		<!-- bootstrap classes here dictate that the video's display shall be inline-block, except
+		<!-- bootstrap classes here dictate that the video's display (inline-block, except
 		when the screen is small. The 'autoplay,' muted,' and 'loop' are attributes for the video that I found online -->
-		
-		<video class="d-inline-block sm-none" id="vid-itself" autoplay muted loop>
-			<source class="frontvid" src="./assets/images/nomad-placeholder-stock-footage.mov"></source>
-		
-		
-<div class="overlay frontvid" id="vidOverlay"></div></video>
-		</div>
+		<video class="d-inline-block" id="vid-itself" autoplay muted loop>
+			<source class="frontvid" id="frontvid-source" src="assets/images/nomad-placeholder-stock-footage.mov"></source>
+			<div class="overlay frontvid" id="vidOverlay">
+			</div>
+		</video>
+	</div>
 		<div class="frontvid frontvid-container2 text-center justify-center">
-			<h1 class="greeting display-4 text-center justify-center">Welcome to</h1>
-			<h1 class="greeting display-1 text-center justify-center nomad">Nomad</h1>
-			<!-- <div class="buttonWrapper"> -->
+			<h1 class="greeting1 display-4 text-center justify-center">Welcome to</h1><br>
+			<h1 class="greeting display-1 text-center justify-center nomad">Nomad</h1><br>
+			<div class="buttonWrapper">
 				<input class="frontvid-button buttonTheme text-center justify-center" type="button" value="Get Started"> </input>
-			<!-- </div> -->
-			
-			
-				
-			
-
+			</div>
 		</div>
 
 	</div>
@@ -106,10 +101,7 @@
 				// Leave the lines as is for the providers you want to offer your users.
 				firebase.auth.GoogleAuthProvider.PROVIDER_ID,
 				firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-
-
 				firebase.auth.EmailAuthProvider.PROVIDER_ID,
-
 				firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
 			],
 			// tosUrl and privacyPolicyUrl accept either url string or a callback
@@ -144,23 +136,23 @@
 			}
 		});
 
-		var alignSignIn = function alignSignIn(){
-			$(".frontvid-container2").append(firebaseui-auth-container);
-			console.log(firebase.auth.GoogleAuthProvider.PROVIDER_ID);
+		// var alignSignIn = function alignSignIn(){
+		// 	$(".frontvid-container2").append(firebaseui-auth-container);
+		// 	console.log(firebase.auth.GoogleAuthProvider.PROVIDER_ID);
 			// $(".frontvid-container2").append(firebase.auth.GoogleAuthProvider.PROVIDER_ID);
 			// console.log("fire idp list", $(".firebaseui-idp-list > li").html())
-		}
-		alignSignIn()
+		// }
+		// alignSignIn()
 
 		
-		var getStarted = function getStarted() {
-			$(".get-started").on("click", function () {
-				$(".firebaseui-idp-list li").toggleClass("reveal");
-				$(".firebaseui-card-footer").toggleClass("reveal");
-				$("#firebaseui-auth-container").toggleClass("reveal");
-			})
-		};
-		getStarted();
+		// var getStarted = function getStarted() {
+		// 	$(".get-started").on("click", function () {
+		// 		$(".firebaseui-idp-list li").toggleClass("reveal");
+		// 		$(".firebaseui-card-footer").toggleClass("reveal");
+		// 		$("#firebaseui-auth-container").toggleClass("reveal");
+		// 	})
+		// };
+		// getStarted();
 	</script>
 </body>
 

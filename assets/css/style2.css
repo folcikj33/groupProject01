@@ -1,0 +1,66 @@
+/* ----------------------------------------------------------- */
+/* Here is the CSS for the Home html. Both CSS's are linked to both html's. 
+/* I did my best to parse the two, but there are some elements that belong 
+/* in this css file but I kept in the other for convenience */
+/* ----------------------------------------------------------- */
+
+#homeHeader {
+	justify-items: center;
+	height: 100%;
+	width: 100%;
+
+	opacity: 0.5;
+	background-image: url("../images/nomadhero.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	/* height: 100%; */
+	position: relative;
+	z-index: 0;
+}
+.homeNomadContainer:link {
+	background-color: black;
+}
+
+/* Here we make all the working links blue and all visited links dark magenta
+/* The form-group and card-classes help to keep everything orderly and look neat
+/* Scroll-style allows for a scrolling feature on the card body, saving space.
+/* Container class gives the page some margins.
+/* ----------------------------------------------------------- */
+
+a:link {
+	text-decoration: blue;
+}
+
+a:visited {
+	color: darkmagenta;
+}
+
+.form-group,
+.card label {
+	line-height: 1.5;
+	font-size: 2em;
+	font-family: "alegreya sans SC";
+}
+
+.card-header {
+	/* margin: auto; */
+	font-size: 2em;
+	/* width: 80%;  */
+	font-family: "alegreya sans SC";
+}
+
+.scrollStyle {
+	max-height: 905px;
+	overflow-y: scroll;
+}
+
+/* squeezing in the form and results */
+.container-fluid {
+	width: 80%;
+}
+.homePage {
+	left: 50%;
+	right: 50%;
+	background-color: rgb(235, 235, 235);
+}
