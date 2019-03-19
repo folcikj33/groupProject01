@@ -16,17 +16,31 @@ firebase.auth().onAuthStateChanged(function () {
   console.log(user);
   currentUserID = user.uid;
   console.log(currentUserID);
-  if (user != null) {
-    database
-      .ref("users")
-      .child(user.uid)
-      .set({
-        email: user.email,
-        displayName: user.displayName,
-        newUser: true
-      });
-  }
+  databaseListener(currentUserID)
+
 });
+function databaseListener(uid) {
+  console.log("tryna listen!")
+  database.ref("users").on('child_changed', function (childSnapshot) {
+    var user = childSnapshot.val();
+    for (var key in user) {
+
+      if (typeof user[key].link === "string" && typeof user[key].job_title === "string") {
+        console.log(user[key].link, user[key].job_title)
+      }
+    }
+  })
+}
+
+
+// for (i = 0; i < user.uid.length; i++) {
+//   console.log(user.uid[i])
+// }
+// console.log(database[0].link)
+// var webLinks = $("<a>")
+// .attr("href", database[i].link)
+
+// $("#recent-licks").append(webLinks)
 // var ref = new Firebase("https://groupproject01-91c86.firebaseio.com");
 // // Generate a new push ID for the new post
 // var newPostRef = ref.child("posts").push();
@@ -63,10 +77,10 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
   //==================GETS JOB TITLE FROM THE USER-SUBMITTED FORM==========================
   if ($("#exampleFormControlInput1").val()) {
     var jobTitle = $("#exampleFormControlInput1").val()
-    console.log("JOB SEARCH!!", jobTitle)
+    // console.log("JOB SEARCH!!", jobTitle)
   } else {
     var jobTitle = $("#exampleFormControlInput1").attr("placeholder")
-    console.log("PLACEHOLDER", jobTitle)
+    // console.log("PLACEHOLDER", jobTitle)
   }
   //what's up with the %20? => it's UTF encoding for URLs to represent a empty space
   var keyword = jobTitle;
@@ -76,7 +90,7 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
 
   //==================GETS CITY FROM DROPDOWN==============================================
   var city = $("#city-selected option:selected").text();
-  console.log("CITY!!", city)
+  // console.log("CITY!!", city)
   var where = city;
   var locationEncoded = encodeURI(where);
   //==================GETS CITY FROM DROPDOWN==============================================
@@ -84,7 +98,7 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
 
   //==================GETS EMPLOYMENT TYPE FROM DROPDOWN===================================
   var jobType = $("#job-selected option:selected").text();
-  console.log("JOB!!", jobType)
+  // console.log("JOB!!", jobType)
   if (jobType == "Full-Time") {
     var jobAPI = "&full_time=1"
   } else if (jobType == "Part-Time") {
@@ -102,10 +116,10 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
   var distance;
   if ($("#exampleFormControlInput2").val()) {
     distance = $("#exampleFormControlInput2").val()
-    console.log("DISTANCE!!", distance)
+    // console.log("DISTANCE!!", distance)
   } else {
     distance = $("#exampleFormControlInput2").attr("placeholder")
-    console.log("DISTANCE PLACEHOLDER", distance)
+    // console.log("DISTANCE PLACEHOLDER", distance)
   }
   //==================GETS DISTANCE FROM USER-SUBMITTED FORM================================
 
@@ -115,10 +129,10 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
   var age;
   if ($("#exampleFormControlInput3").val()) {
     age = $("#exampleFormControlInput3").val()
-    console.log("AGE!!", age)
+    // console.log("AGE!!", age)
   } else {
     age = $("#exampleFormControlInput3").attr("placeholder")
-    console.log("AGE PLACEHOLDER", age)
+    // console.log("AGE PLACEHOLDER", age)
   }
   //==================GETS AGE FROM USER-SUBMITTED FORM===================================
 
@@ -143,11 +157,11 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
     url: queryURL,
     method: "GET"
   }).then(function (response) {
-    console.log(response);
-    console.log(queryURL);
+    // console.log(response);
+    // console.log(queryURL);
 
     var database = response.results;
-    console.log(database);
+    // console.log(database);
 
     //NICK'S IF STATEMENT (tells users if there's no jobs available)==========================================
     if (database.length > 0) {
@@ -158,9 +172,9 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
       var company = database[0].company.display_name;
       var description = database[0].description;
 
-      console.log(company);
-      console.log(description);
-      console.log(database.length);
+      // console.log(company);
+      // console.log(description);
+      // console.log(database.length);
 
       for (i = 0; i < database.length; i++) {
         var companyList = database[i].company.display_name;
@@ -185,7 +199,7 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
         //===============New Code=================================
 
         var titleList = database[i].title;
-        companyDiv.append(titleList + ": ");
+        companyDiv.append("<u>" + titleList + "</u>" + ": ");
 
         var description = database[i].description;
         companyDiv.append("<br />" + description + "<br /> ");
@@ -207,17 +221,22 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
     }
   })
 
-  $(document).on("click", "a", function () {
+})
 
-    var link = $(this).attr("href");
-    console.log(link);
 
-    database
-      .ref("users")
-      .child(user.uid)
-      .push({
-        link: link
-      });
+$(document).on("click", "a", function () {
 
-  })
-});
+  var link = $(this).attr("href");
+  titleDB = $(this).siblings("u").html();
+  console.log(titleDB);
+
+  database.ref("users").child(user.uid).push({
+    link: link,
+    job_title: titleDB
+  });
+
+
+})
+
+
+
