@@ -1,30 +1,31 @@
 /* ----------------------------------------------------------- */
-/* Small devices are treated as default (landscape phones, 576px - ~748px)
+/* Small devices are treated as default (landscape phones, 576px - ~768px)
 /* ----------------------------------------------------------- */
 
-/* @media only screen and (max-width: 748px) { */
 #vidOverlay,
 .frontvid {
 	display: none;
 }
-/* } */
 
-/*---Using this as a lense or filter that fits its parent div and only taints the things beneath--- */
+/* Using this as a lense or filter that fits 
+its parent div and only taints the things beneath */
+
 .overlay {
 	min-height: 100%;
 	max-height: 100%;
 	min-width: 100%;
 	max-width: 100%;
+	color: rgba(255, 255, 255 0.1);
 	position: absolute;
+	/* display: none; */
 }
 
 /* ----------------------------------------------------------- */
-/* Root elements or otherwise most regular elements and take */
-/* are of broadest and most shared rules first */
+/* Root elements/heading elements */
 /* ----------------------------------------------------------- */
 
 .frontPage {
-	margin: none;
+	margin: 0;
 	align-content: center;
 	text-align: center;
 	overflow-x: hidden;
@@ -36,160 +37,164 @@ h2 {
 	font-family: "Alegreya Sans SC";
 	color: rgb(255, 255, 255);
 	text-shadow: 50px 10px 50px rgb(0, 153, 224);
+	text-shadow: -50px -10px -50px rgb(0, 153, 224);
 	font-weight: 900;
 	font-size: 3em;
 	letter-spacing: 15px;
 	z-index: 1;
 }
 
-.greeting {
-	font-size: 6em;
-}
-
-/*The name of the App should be special and consistent*/
-.nomad {
-	text-shadow: 5px 5px 50px navy;
-	text-shadow: 30px 30px 30px 50px black;
-	font-family: "Alegreya Sans SC";
-	color: white;
-	font-size: 6em;
-}
-
 #homeHeader {
 	justify-items: center;
 	height: 300px;
-	/* background-position: center; */
+	width: 100%;
+	background-position: center;
 	opacity: 0.5;
 	background-image: url("../images/nomadhero.jpg");
 	background-size: 100%;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
+	/* background-attachment: fixed; */
 	/* height: 100%; */
 	position: relative;
 }
 
 #indexHeader {
-	justify-items: center;
-	/* height: 500px; */
-	/* opacity: 0.5; */
-	background-image: url("../images/nomadhero.jpg");
-	/* background-size: 100%; */
+	position: absolute;
+	/* justify-items: center; */
+	background-color: rgba(0, 0, 0, 0.7);
+	background-image: url("../images/pinterest-skyscrapers.jpg");
+	background-size: cover;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
-	/* height: 100%; */
-	position: relative;
-	z-index: 0;
-}
-
-/* originally used as 'overlay', but holds mysterious bootstrap properties */
-/* .jumbotron1 {
-	justify-content: center;
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	opacity: 0.1;
-	background-color: transparent;
-	background-color: rgba(0, 0, 200, 0.109);
-	vertical-align: center;
-	padding-top: 100px;
-	z-index: -1;
-} */
+	z-index: 0;
+}
 
+#headerOverlay,
+#headerOverlay-home {
+	background-color: rgba(230, 232, 253, 0.3);
+	z-index: 1;
+	/* -webkit-filter: blur(8px); */
+}
+
+.jumbotron1 {
+	/* position: fixed; */
+	/* margin: auto; */
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.425);
+	height: 700px;
+	z-index: 2;
+	bottom: 30%;
+	bottom: 40%;
+}
+
+#firebaseui-auth-container {
+	/* position: absolute; */
+	/* padding: 400px; */
+	margin-top: 0px;
+	text-align: center;
+	margin-left: 30%;
+	margin-right: 30%;
+}
+
+/* ----------------------------------------------------------- */
+/* The containers that keep the words of the respective headers organized */
+/* ----------------------------------------------------------- */
 .responsiveGreetingContainer,
 .homeNomadContainer {
+	position: absolute;
 	display: flex;
-	justify: center;
+	flex-basis: auto;
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-	/* height: 100%; */
+	height: 100%;
+	z-index: auto;
 }
-
-.form-group,
-.card label {
-	/* line-height: 1; */
-	font-size: 1.5em;
-	font-family: "alegreya sans";
+.greeting {
+	font-size: 6em;
+	line-break: 2;
 }
+.nomad {
+	text-shadow: 5px 5px 50px navy;
+	text-shadow: 30px 30px 30px 50px black;
+	text-shadow: -30px -30px 30px 50px black;
+	font-family: "lalezar";
+	color: whitesmoke;
+	font-size: 10em;
+	margin: 0;
 
-.card-header {
-	font-family: "alegreya sans SC";
-	font-size: 2em;
-}
-
-/* ----------------------------------------------------------- */
-/* Make un-clicked links blue and visited ones purple */
-/* ----------------------------------------------------------- */
-a:link {
-	text-decoration: blue;
-}
-
-a:visited {
-	color: darkmagenta;
+	padding-top: 10px;
 }
 
 /* ----------------------------------------------------------- */
-/* Form & results scroll-bar and container for results */
+/* Buttons style/info
 /* ----------------------------------------------------------- */
-.scrollStyle {
-	max-height: 905px;
-	overflow-y: scroll;
-}
-
-/* squeezing in the form and results */
-.container {
-	width: 80%;
-}
-
-/* ----------------------------------------------------------- */
-/* Buttons */
-/* There was a button named "Get Started", but it proved to be redundant */
-/* But an artist's creations never die, only sleep... */
-/* ----------------------------------------------------------- */
-
+/* 
 .buttonWrapper {
-	/* border: 2px solid black; <-(to see boundaries) */
+	border: 2px solid black;
 	background-color: transparent;
 	text-align: center;
-}
+	z-index: 2;
+} */
 
-.normalButtonTheme {
+.buttonTheme {
 	border: 2px solid black;
 	height: 80px;
-	width: 180px;
+	width: auto;
 	text-align: center;
 	display: inline-block;
 	text-align: center;
-	font-family: "alegreya sans SC";
+	font-family: "krona one";
 	font-size: 2em;
-	text-shadow: 1px 1px 1px white;
-	box-shadow: 5px 0px 40px rgb(0, 0, 0);
+	transition-duration: 0.3s;
+	/* overflow: visible; */
 	background-color: transparent;
+	z-index: 2;
 }
 
 .frontvid-button {
 	/* border: 2px solid black; <-(unclear if necessary) */
 	font-size: 2em;
+	top: 600px;
 	background-color: rgba(220, 220, 250, 0.3);
-	display: none;
+	/* display: none; */
+	position: absolute;
+}
+
+.buttonTheme:hover {
+	text-shadow: 5px 5px 10px black;
+	box-shadow: 40px 10px 40px black;
+	background-color: rgba(15, 0, 146, 0.415);
+	color: white;
 }
 
 /* ----------------------------------------------------------- */
-/* For tablet eyes only (~748px - ~994px) */
+/* For tablet (~748px - ~994px) */
 /* ----------------------------------------------------------- */
 
 @media only screen and (min-width: 748px) {
 	.frontvid {
-		/* height: 140%; */
-		/* display: inline-block; */
+		height: 140%;
+		display: inline-block;
 		position: relative;
 		min-width: 100%;
 		align-self: center;
 		top: 0;
 	}
 	#firebaseui-auth-container {
-		position: static;
-		top: 100px;
+		position: absolute;
+		/* bottom: 0px; */
+		/* margin: 0; */
+	}
+
+	#indexHeader {
+		background-image: url("../images/pinterest-skyscrapers.jpg");
+		z-index: 1;
+		background-repeat: no-repeat;
+		margin: 0;
+		height: 100%;
 	}
 
 	#vidOverlay,
@@ -205,32 +210,52 @@ a:visited {
 
 @media screen and (min-width: 994px) {
 	#indexHeader,
-	#homeHeader,
 	#headerOverlay,
 	.jumbotron1 {
 		display: none;
 	}
+
 	.frontvid {
 		position: absolute;
 		top: 0px;
-		text-align: center;
-		left: 0px;
-		right: 0px;
-	}
-	.frontvid-container1 {
-		/* display: flex;
-		flex-direction: column; */
-		height: 110%;
-		width: 100%;
-		max-width: 100%;
-		justify: center;
-	}
-	#vid-itself {
+		bottom: 0px;
 		height: 100%;
-		min-width: 100%;
-		max-width: 160%;
+		text-align: center;
+		size: cover;
+		/* left: 0px; */
+		/* right: 0px; */
 	}
 
+	#vidOverlay {
+		background-color: rgba(230, 232, 253, 0.671);
+		position: absolute;
+		/* visibility: hidden; */
+		display: inherit;
+		size: cover;
+		z-index: 1;
+		/* display: inline; */
+	}
+
+	/* container holds video, text, and any input buttons not from firebase */
+	/* -----> */
+	.frontvid-container1 {
+		display: flex;
+		flex-direction: column;
+		height: 110%;
+		min-width: 100%;
+		max-width: 160%;
+		/* justify-content: space-around; */
+	}
+	#vid-itself {
+		display: inline-block;
+		position: absolute;
+		height: 110%;
+		min-width: 100%;
+		max-width: 160%;
+		size: cover;
+	}
+
+	/* contains strictly the headings and and buttons that might go over the video */
 	.frontvid-container2 {
 		position: absolute;
 		display: flex;
@@ -241,37 +266,16 @@ a:visited {
 	}
 }
 
-/* ________TABLET________ */
-
-#headerOverlay,
-#headerOverlay-home {
-	background-color: rgba(19, 19, 95, 0.438);
-}
-
-/* possibly change color */
-#vidOverlay {
-	background-color: rgba(230, 232, 253, 0.671);
-}
-
-#firebaseui-auth-container {
-	/* position: absolute; */
-	/* padding: 400px; */
-	margin-top: 430px;
-	align: center;
-	margin-left: 25%;
-	margin-right: 25%;
-}
-
 .firebaseui-idp-list > li,
-.firebaseui-card-footer {
-	/* #firebaseui-auth-container { */
-	/* visibility: none; */
-	/* opacity: 0; */
+.firebaseui-card-footer,
+#firebaseui-auth-container {
+	display: none;
+	opacity: 0;
 	margin-top: 30px;
-	-webkit-transition: height auto 4s, opacity 1, visibility visible,
+	-webkit-transition: height auto, opacity 1, visibility visible,
 		padding-top 50px;
 	transition-duration: 3s;
-	transition-timing-function: ease;
+	transition-timing-function: ease-in;
 }
 
 .firebaseui-idp-list > li.reveal,
@@ -280,8 +284,9 @@ a:visited {
 	height: auto;
 	opacity: 1;
 	visibility: visible;
-	margin-top: 450px;
-	padding-top: 50px;
+	margin: 0;
+	/* margin-top: 450px; */
+	/* padding-top: 50px; */
 }
 
 /* ________Saving this for the Nomad animation whereby it swoops in as "Now" but the w flips as the "a" and "d" are added_________ */

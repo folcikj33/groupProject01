@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 	<link href="https://fonts.googleapis.com/css?family=Alegreya Sans" rel="stylesheet" />
+	<link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Krona One' rel='stylesheet'>
 	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 	<link href="https://fonts.googleapis.com/css?family=Alegreya Sans SC" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
@@ -20,18 +22,26 @@
 	<!-- The surrounding HTML is left untouched by FirebaseUI.
          Your app may use that space for branding, controls and other customizations.-->
 	<header id="indexHeader">
+		<div class="overlay" id="headerOverlay">
 
-		<div class="overlay" id="headerOverlay"></div>
-		<!-- <div class="jumbotron jumbotron-fluid jumbotron1"></div> -->
+		</div>
+		<div class="jumbotron jumbotron-fluid jumbotron1">
+			
 		<div class="responsiveGreetingContainer">
+
 			<h1 class="display-4 text-center justify-center">
-				Welcome to </h1>
+				Welcome to 
+			</h1> 
+			<br>
+			<br>
+			<br>
+
 			<h1 class="nomad display-1 text-center justify-center">
 				Nomad
 			</h1>
-
+			</div>
 			<div class="buttonWrapper">
-				<input class="frontvid-button normalButtonTheme text-center justify-center" type="button" value="Get Started">
+				<input class="frontvid-button buttonTheme shadow-lg p4 text-center justify-center" type="button" value="Get Started">
 			</div>
 			<br />
 			<!-- <p class="display-10 text-center">
@@ -44,22 +54,26 @@
 							Plan Your Next Move
 						</h2> -->
 		</div>
+	
 	</header>
 	<div class="frontvid frontvid-container1">
 
 		<!-- bootstrap classes here dictate that the video's display shall be inline-block, except
 		when the screen is small. The 'autoplay,' muted,' and 'loop' are attributes for the video that I found online -->
-
+		
 		<video class="d-inline-block sm-none" id="vid-itself" autoplay muted loop>
 			<source class="frontvid" src="./assets/images/nomad-placeholder-stock-footage.mov"></source>
-		</video>
-		<div class="overlay frontvid" id="vidOverlay"></div>
+		
+		
+<div class="overlay frontvid" id="vidOverlay"></div></video>
+		</div>
 		<div class="frontvid frontvid-container2 text-center justify-center">
 			<h1 class="greeting display-4 text-center justify-center">Welcome to</h1>
 			<h1 class="greeting display-1 text-center justify-center nomad">Nomad</h1>
-			<div class="buttonWrapper"><br><br><br>
-				<input class="frontvid-button normalButtonTheme text-center justify-center" type="button" value="Get Started">
-			</div><br>
+			<!-- <div class="buttonWrapper"> -->
+				<input class="frontvid-button buttonTheme text-center justify-center" type="button" value="Get Started"> </input>
+			<!-- </div> -->
+			
 			
 				
 			

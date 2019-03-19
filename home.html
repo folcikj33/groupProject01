@@ -15,11 +15,16 @@
 			href="https://fonts.googleapis.com/css?family=Alegreya Sans"
 			rel="stylesheet"
 		/>
-		<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+		<link
+			href="https://fonts.googleapis.com/css?family=Lalezar"
+			rel="stylesheet"
+		/>
 		<link
 			href="https://fonts.googleapis.com/css?family=Alegreya Sans SC"
 			rel="stylesheet"
 		/>
+		<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+
 		<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
 	</head>
 
@@ -27,13 +32,14 @@
 		<div class="container">
 			<header id="homeHeader">
 				<div class="overlay" id="headerOverlay-home"></div>
-				<!-- <div class="jumbotron jumbotron-fluid jumbotron1"></div> -->
+				<div class="jumbotron jumbotron-fluid jumbotron1"></div>
 				<div class="homeNomadContainer">
-					<input
+					<div
+						type="btn"
 						class="nomad display-4 text-center justify-center"
 						value="Nomad"
 						src="./index.html"
-					/>
+					></div>
 				</div>
 			</header>
 			<form>
@@ -43,7 +49,7 @@
 						type="job-title"
 						class="form-control"
 						id="exampleFormControlInput1"
-						placeholder="Software Engineer"
+						placeholder="Type Your Dream Job in Here!"
 					/>
 				</div>
 				<div class="row">
@@ -126,7 +132,7 @@
 				<input
 					type="button"
 					id="submit-button"
-					class="btn btn-primary normalButtonTheme"
+					class="btn btn-primary buttonTheme"
 					value="Submit"
 				/>
 			</form>
