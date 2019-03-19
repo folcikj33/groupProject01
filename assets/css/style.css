@@ -133,11 +133,29 @@ h2 {
 	/* overflow-y: visible; */
 }
 
+<<<<<<< HEAD
 .buttonTheme {
 	position: relative;
 	border: 2px solid black;
 	height: 50px;
 	width: auto;
+=======
+.modal {
+	overflow: auto;
+}
+
+.close-modal {
+	top: -3.5px!important;
+    right: -3.5px!important;
+}
+
+/* ________FOR SURE FRONT PAGE STUFF. ABOVE NEEDS SESSING OUT________ */
+
+.frontvid-container2 {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+>>>>>>> master
 	text-align: center;
 	display: inline-block;
 	font-family: "krona one";
