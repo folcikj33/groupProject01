@@ -8,10 +8,26 @@
 	<title>Home Page</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+	<!-- This is for Bootstrap functionality, the collapsible stuff needs the old jquery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+
+
+
 	<link href="https://fonts.googleapis.com/css?family=Alegreya Sans" rel="stylesheet" />
 	<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Alegreya Sans SC" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+
+
 </head>
 
 <body class="homePage">
@@ -102,8 +118,19 @@
 			</button>
 		</form>
 		<br />
+		<p>
 
-		<div id="recent-clicks"></div>
+			<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+				aria-expanded="false" aria-controls="collapseExample">
+				Recent Clicks
+			</button>
+		</p>
+		<div class="collapse" id="collapseExample">
+			<div id="recent-clicks" class="card card-body">
+
+			</div>
+		</div>
+
 
 		<div class="row">
 			<div class="col-sm-12 col-lg-6">
@@ -112,7 +139,8 @@
 						Available Jobs
 						<!-- Jobs Modal HTML -->
 						<div id="job-help" class="modal" style="height: 30%;">
-							<p>The "available jobs" panel below will show available job postings sourced from Adzuna.
+							<p>The "available jobs" panel below will show available job postings sourced from
+								Adzuna.
 								Adzuna searches thousands of websites to aid users in their job search.
 							</p>
 							<a href="#" rel="modal:close">Close</a>
@@ -130,16 +158,19 @@
 						City Details
 						<!-- City Modal HTML -->
 						<div id="city-help" class="modal">
-							<p>The "city details" panel below will pull a top level summary about the city used in the
+							<p>The "city details" panel below will pull a top level summary about the city used in
+								the
 								job search.</p>
 
-							<p>The city data is pulled from Teleport. Teleport is a company that provides data to help
+							<p>The city data is pulled from Teleport. Teleport is a company that provides data to
+								help
 								users make an informed decision about the quality of life in the cities relevant to
 								their
 								job search. Teleport's data spans across 200 international cities.</p>
 
 							<p>Below includes some insight into the catagories provided by Teleport:</p>
-							<p><strong>Housing</strong>: a score derived from rental costs of small to large apartments.
+							<p><strong>Housing</strong>: a score derived from rental costs of small to large
+								apartments.
 							</p>
 							<p><strong>Cost of Living</strong>: a score derived from average cost of goods from cab
 								rides, groceries,
@@ -149,26 +180,33 @@
 								investors, meetup events, and more.</p>
 							<p><strong>Venture Capital</strong>: a score derived from local venture capital
 								opportunities.</p>
-							<p><strong>Travel Connectivity</strong>: a score derived from public transport and airport
+							<p><strong>Travel Connectivity</strong>: a score derived from public transport and
+								airport
 								traffic.</p>
 							<p><strong>Commute</strong>: a score derived from intercity traffic.</p>
-							<p><strong>Business Freedom</strong>: a score derived from labor restrictions, time it takes
+							<p><strong>Business Freedom</strong>: a score derived from labor restrictions, time it
+								takes
 								to open a
 								business, and more.</p>
-							<p><strong>Safety</strong>: a score derived from crime rate, gun related deaths and more.
+							<p><strong>Safety</strong>: a score derived from crime rate, gun related deaths and
+								more.
 							</p>
-							<p><strong>Healthcare</strong>: a score derived from life expectancy, healthcare costs and
+							<p><strong>Healthcare</strong>: a score derived from life expectancy, healthcare costs
+								and
 								more.</p>
-							<p><strong>Education</strong>: a score derived from high school student testing performance,
+							<p><strong>Education</strong>: a score derived from high school student testing
+								performance,
 								nearby
 								university rankings, and more.</p>
-							<p><strong>Environmental Quality</strong>: a score derived from air quality, parks, drinking
+							<p><strong>Environmental Quality</strong>: a score derived from air quality, parks,
+								drinking
 								water quality
 								and more.</p>
 							<p><strong>Economy</strong>: a score derived GDP per capita and GDP growth rate.</p>
 							<p><strong>Taxation</strong>: a score derived from sales tax, income tax, and more.</p>
 							<p><strong>Internet Access</strong>: a score derived from internet speeds.</p>
-							<p><strong>Leisure & Culture</strong>: a score derived from nearby art galleries, cinemas,
+							<p><strong>Leisure & Culture</strong>: a score derived from nearby art galleries,
+								cinemas,
 								concert venues,
 								and more.</p>
 							<p><strong>Tolerance</strong>: a score derived from LGBT rights and tolerance towards
@@ -187,7 +225,6 @@
 		</div>
 	</div>
 	<br />
-
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
 		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<!-- jQuery Modal -->
@@ -195,6 +232,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 	<script type="text/javascript" src="./jobApp/jobAPI.js"></script>
 	<script src="./assets/javascript/app.js"></script>
+
 </body>
 
 </html>
