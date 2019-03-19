@@ -19,6 +19,7 @@ firebase.auth().onAuthStateChanged(function () {
   databaseListener(currentUserID)
 
 });
+
 function databaseListener(uid) {
   console.log("tryna listen!")
   database.ref("users").on('child_changed', function (childSnapshot) {
@@ -26,48 +27,17 @@ function databaseListener(uid) {
     for (var key in user) {
 
       if (typeof user[key].link === "string" && typeof user[key].job_title === "string") {
-        console.log(user[key].link, user[key].job_title)
+        console.log(user[key].link, user[key].job_title);
+        //$("#recent-clicks").append(user[key].job_title + "<br />");
+        var databaseLinks = $("<a>")
+        databaseLinks.attr("href", user[key].link).html("<strong>" + " Link" + "</strong>")
+
+        $("#recent-clicks").prepend(user[key].job_title, databaseLinks);
+        $("#recent-clicks").prepend("<hr>");
       }
     }
   })
 }
-
-
-// for (i = 0; i < user.uid.length; i++) {
-//   console.log(user.uid[i])
-// }
-// console.log(database[0].link)
-// var webLinks = $("<a>")
-// .attr("href", database[i].link)
-
-// $("#recent-licks").append(webLinks)
-// var ref = new Firebase("https://groupproject01-91c86.firebaseio.com");
-// // Generate a new push ID for the new post
-// var newPostRef = ref.child("posts").push();
-// var newPostKey = newPostRef.key();
-// // Create the data we want to update
-// var updatedUserData = {};
-// updatedUserData["user/posts/" + newPostKey] = true;
-// updatedUserData["posts/" + newPostKey] = {
-//   title: "New Post",
-//   content: "Here is my new post!"
-// };
-// Do a deep-path update
-// ref.update(updatedUserData, function (error) {
-//   if (error) {
-//     console.log("Error updating data:", error);
-//   }
-// });
-// database.ref(userId + '/jobAPI').push({
-//   stuff: 
-// })
-// const key = firebase.database().ref().push().key
-// function writeFavoritesList(name, videoID, toggleValue) {
-//   firebase.database().ref('jobAPI/' + userId).set({
-//     name: displayName,
-//     videoID: videoID,
-//     toggleValue: true
-//   });
 
 //Testing the Adzuna API
 
@@ -231,7 +201,6 @@ $(document).on("click", "a", function () {
     link: link,
     job_title: titleDB
   });
-
 
 })
 
