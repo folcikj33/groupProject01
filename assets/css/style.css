@@ -109,6 +109,15 @@ a:visited {
 	width: 80%;
 }
 
+.modal {
+	overflow: auto;
+}
+
+.close-modal {
+	top: -3.5px!important;
+    right: -3.5px!important;
+}
+
 /* ________FOR SURE FRONT PAGE STUFF. ABOVE NEEDS SESSING OUT________ */
 
 .frontvid-container2 {
