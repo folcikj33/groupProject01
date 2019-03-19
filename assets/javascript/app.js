@@ -1,7 +1,6 @@
 $(document).ready(function () {
     $("#submit-button").on("click", function (event) {
         event.preventDefault();
-        console.log("this got click");
         $("#city-details").empty()
 
         let citySelected = $("#city-selected").find(":selected").text();
@@ -48,26 +47,36 @@ $(document).ready(function () {
         let queryURL = "https://api.teleport.org/api/urban_areas/slug%3A" + searchCity + "/scores/"
 
 
-        // API 
+        // Teleport API call
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-            // p tag needed?
-            $("#city-details").append("<div class='text-center'><strong>Teleport's Overall City Score: </strong>" + Math.round(response.teleport_city_score) + " out of 100.</div><hr>" + response.summary + "<hr>");
-            $("#city-details").append("<div class='text-center'><strong>Category Scores</strong> (10 is the highest)<hr>")
+            // Print summary content
+            $("#city-details").append("<div class='text-center'><h4>" + citySelected + "</h4><div><div class='text-center'><strong>Teleport's Overall City Score: </strong>" + Math.round(response.teleport_city_score) + " out of 100.</div><hr>" + response.summary + "<hr>");
+            $("#city-details").append("<div><strong>Quality of Life Category Scores</strong> (10 is the highest)<div><br>");
+
+            // Print table for category scores
+            let cityTable = $("<table class='table table-responsive'><tr>");
+            $("#city-details").append(cityTable);
             for (let i = 0; i < response.categories.length; i++) {
+                if (i % 2 === 0) {
+                    $("tbody").append("<tr>")
+                }
                 let detailName = response.categories[i].name;
                 console.log(response.categories[0])
                 console.log(detailName)
                 let detailScore = response.categories[i].score_out_of_10;
-                let detailElement = $("<p>");
-                // add color
-                // let color = response.categories[i].color
-                // $(detailElement).attr("style", "color: " + color)
-                $(detailElement).append(detailName + ": " + detailScore.toFixed(1))
-                $("#city-details").append(detailElement)
-            }
+                let detailElement = $("<td class='text-center'>");
+                // add color borders
+                let color = response.categories[i].color
+                $(detailElement).attr("style", "border: 3px solid " + color)
+                $(detailElement).append(detailName + ":<br> " + detailScore.toFixed(1))
+                $("tbody").append(detailElement)
+                if (i === 16) {
+                    $(detailElement).attr("colspan", "2")
+                }
+            }// Print a URL for users redirect users to Teleport's data for this city
             $("#city-details").append("For more details on Teleport's scoring, visit <a target='_blank' href='https://teleport.org/cities/" + searchCity + "'>Teleport</a>")
         });
 

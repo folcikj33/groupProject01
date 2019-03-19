@@ -143,7 +143,8 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
   const queryURL =
     "https://api.adzuna.com:443/v1/api/jobs/us/search/1?app_id=e6cd0ed5&app_key=0f19421e3255011b31ce0bf4464db591%09&results_per_page=300&what_phrase=" +
     keywordEncoded +
-    "&where=" +
+    //Revature excluded because it's annoying
+    "&what_exclude=revature&where=" +
     locationEncoded +
     "&distance=" +
     distance +
@@ -178,15 +179,11 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
 
       for (i = 0; i < database.length; i++) {
         var companyList = database[i].company.display_name;
-        //===============New Code=================================
         let newTable = $("<table>").attr("class", "table")
         let tHead = $("<thead>")
-        //===============New Code=================================
 
         var companyDiv = $("<div>").attr("class", "company-" + i);
-        //companyDiv.append(companyList + ": ");
 
-        //===============New Code=================================
         let newTR = $("<tr>")
         let newTH = $("<th>").attr("scope", "col")
         newTH.html(companyList);
@@ -196,7 +193,6 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
         newTable.append(tHead);
 
         companyDiv.append(newTable);
-        //===============New Code=================================
 
         var titleList = database[i].title;
         companyDiv.append("<u>" + titleList + "</u>" + ": ");
@@ -209,7 +205,8 @@ $(document).off("click", "#submit-button").on("click", "#submit-button", functio
           .attr("target", "_blank")
           .attr("class", "btn")
           .attr("class", "btn-default")
-          .text("Apply!");
+          .attr("style", "text-align: center")
+          .html("<h4>" + "Apply!" + "</h4>");
         companyDiv.append(applyButton);
 
         $("#job-results").append(companyDiv);
@@ -237,6 +234,5 @@ $(document).on("click", "a", function () {
 
 
 })
-
 
 
